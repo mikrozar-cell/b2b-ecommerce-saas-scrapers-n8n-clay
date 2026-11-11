@@ -1,0 +1,133 @@
+{
+  "name": "Extract Chrome Extension Developer Trader Emails, Manifest Permissions & Bug Reviews",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Extract Chrome Extension Developer Trader Emails, Manifest Permissions & Bug Reviews\n**Powered by StoreIntel Labs on Apify:** [Chrome Web Store Scraper: Extensions, Trader Emails, Manifest & Reviews](https://apify.com/storeintel/chrome-web-store-scraper)\n\nScrape Chrome Web Store extensions via Google batchexecute RPC to extract verified EU DSA trader support emails, physical addresses, active install counts, manifest.json permissions, and user bug reports.\n\n### Quick Setup (30 seconds)\n1. Get your free Apify API token at `https://console.apify.com/settings/integrations`.\n2. Open the **Run StoreIntel Apify Actor** node and paste your token in the `Authorization` header (`Bearer YOUR_APIFY_TOKEN`).\n3. Customize the JSON input body or connect it to your Google Sheet / Webhook trigger.\n\n### Pre-Configured Apify Task Templates\n- [Chrome Extension Developer Email, Trader Address & SaaS Leads Scraper](https://apify.com/storeintel/chrome-extension-developer-email-trader-lead-scraper)\n- [Chrome Extension User Reviews, Bug Reports & Churn Leads Scraper](https://apify.com/storeintel/chrome-extension-reviews-bug-churn-scraper)\n- [Chrome Extension Manifest V3 Permissions & Security Auditor](https://apify.com/storeintel/chrome-extension-manifest-permissions-security-auditor)",
+        "height": 420,
+        "width": 620,
+        "color": 4
+      },
+      "id": "sticky-3",
+      "name": "Workflow Documentation",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "schedule-3",
+      "name": "Daily Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/storeintel~chrome-web-store-scraper/run-sync-get-dataset-items",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_APIFY_API_TOKEN"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"extensionUrlsOrIds\": [\n    \"https://chromewebstore.google.com/detail/loom-screen-recorder-sc/liecbddmkiiihnedobmlmillhodjkdmb\"\n  ],\n  \"scrapeExtensionProfiles\": true,\n  \"scrapeReviews\": true,\n  \"maxReviewsPerExtension\": 25\n}",
+        "options": {
+          "timeout": 180000
+        }
+      },
+      "id": "apify-http-3",
+      "name": "Run StoreIntel Apify Actor (chrome-web-store-scraper)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        520,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": {
+          "string": [
+            {
+              "name": "source_actor",
+              "value": "storeintel/chrome-web-store-scraper"
+            },
+            {
+              "name": "actor_store_url",
+              "value": "https://apify.com/storeintel/chrome-web-store-scraper"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "enrich-fields-3",
+      "name": "Normalize Lead Output for CRM / Sheets",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        820,
+        580
+      ]
+    }
+  ],
+  "connections": {
+    "Daily Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Run StoreIntel Apify Actor (chrome-web-store-scraper)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run StoreIntel Apify Actor (chrome-web-store-scraper)": {
+      "main": [
+        [
+          {
+            "node": "Normalize Lead Output for CRM / Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "storeintelActorId": "29JI2nK22H6vnbaD8",
+    "storeintelActorUrl": "https://apify.com/storeintel/chrome-web-store-scraper"
+  }
+}

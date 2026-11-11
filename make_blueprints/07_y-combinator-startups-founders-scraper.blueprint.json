@@ -1,0 +1,73 @@
+{
+  "name": "StoreIntel: Scrape Y Combinator Startup Founders with Direct Personal LinkedIn & X/Twitter Links",
+  "flow": [
+    {
+      "id": 1,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": {
+        "handleErrors": true,
+        "useNewZLibDeCompress": true
+      },
+      "mapper": {
+        "url": "https://api.apify.com/v2/acts/storeintel~y-combinator-startups-founders-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "serializeUrl": false,
+        "method": "post",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "qs": [],
+        "bodyType": "raw",
+        "parseResponse": true,
+        "rawBody": "{\n  \"companySlugsOrUrls\": [\n    \"supabase\",\n    \"resend\",\n    \"posthog\",\n    \"cal-com\"\n  ],\n  \"emitIndividualFounderLeads\": true\n}",
+        "timeout": "300"
+      },
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0,
+          "name": "Run y-combinator-startups-founders-scraper"
+        },
+        "restore": {}
+      }
+    },
+    {
+      "id": 2,
+      "module": "builtin:BasicFeeder",
+      "version": 1,
+      "parameters": {},
+      "mapper": {
+        "array": "{{1.data}}"
+      },
+      "metadata": {
+        "designer": {
+          "x": 300,
+          "y": 0,
+          "name": "Iterate Scraped Leads"
+        },
+        "restore": {}
+      }
+    }
+  ],
+  "metadata": {
+    "instant": false,
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "sequential": false,
+      "confidential": false,
+      "dataloss": false,
+      "dlq": false
+    },
+    "designer": {
+      "orphans": []
+    },
+    "zone": "eu1.make.com"
+  }
+}

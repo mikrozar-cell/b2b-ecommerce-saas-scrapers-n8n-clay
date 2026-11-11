@@ -1,0 +1,73 @@
+{
+  "name": "StoreIntel: Monitor Competitor 1-Star Shopify App Reviews for Churn Lead Generation",
+  "flow": [
+    {
+      "id": 1,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": {
+        "handleErrors": true,
+        "useNewZLibDeCompress": true
+      },
+      "mapper": {
+        "url": "https://api.apify.com/v2/acts/storeintel~shopify-app-store-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "serializeUrl": false,
+        "method": "post",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "qs": [],
+        "bodyType": "raw",
+        "parseResponse": true,
+        "rawBody": "{\n  \"appHandlesOrUrls\": [\n    \"klaviyo-email-marketing\",\n    \"judgeme\"\n  ],\n  \"scrapeAppProfiles\": true,\n  \"scrapeReviews\": true,\n  \"maxReviewsPerApp\": 25,\n  \"reviewRatingFilter\": 1,\n  \"reviewSortBy\": \"newest\"\n}",
+        "timeout": "300"
+      },
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0,
+          "name": "Run shopify-app-store-scraper"
+        },
+        "restore": {}
+      }
+    },
+    {
+      "id": 2,
+      "module": "builtin:BasicFeeder",
+      "version": 1,
+      "parameters": {},
+      "mapper": {
+        "array": "{{1.data}}"
+      },
+      "metadata": {
+        "designer": {
+          "x": 300,
+          "y": 0,
+          "name": "Iterate Scraped Leads"
+        },
+        "restore": {}
+      }
+    }
+  ],
+  "metadata": {
+    "instant": false,
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "sequential": false,
+      "confidential": false,
+      "dataloss": false,
+      "dlq": false
+    },
+    "designer": {
+      "orphans": []
+    },
+    "zone": "eu1.make.com"
+  }
+}

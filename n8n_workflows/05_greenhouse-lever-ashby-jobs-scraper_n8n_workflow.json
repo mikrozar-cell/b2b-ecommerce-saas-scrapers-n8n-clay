@@ -1,0 +1,133 @@
+{
+  "name": "Track B2B Company Hiring Velocity, Salaries & Tech Stack from Greenhouse, Lever & Ashby",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Track B2B Company Hiring Velocity, Salaries & Tech Stack from Greenhouse, Lever & Ashby\n**Powered by StoreIntel Labs on Apify:** [Greenhouse, Lever & Ashby ATS Jobs Scraper: Salaries & B2B Tech Stack Signals](https://apify.com/storeintel/greenhouse-lever-ashby-jobs-scraper)\n\nAutomatically scrape open roles across Greenhouse, Lever, and AshbyHQ job boards, parse salary ranges, and detect 80+ enterprise SaaS/cloud tools (Snowflake, AWS, Kubernetes, Salesforce, HubSpot, Datadog) mentioned in job descriptions.\n\n### Quick Setup (30 seconds)\n1. Get your free Apify API token at `https://console.apify.com/settings/integrations`.\n2. Open the **Run StoreIntel Apify Actor** node and paste your token in the `Authorization` header (`Bearer YOUR_APIFY_TOKEN`).\n3. Customize the JSON input body or connect it to your Google Sheet / Webhook trigger.\n\n### Pre-Configured Apify Task Templates\n- [Greenhouse Job Board, Salaries & Tech Stack Scraper](https://apify.com/storeintel/greenhouse-job-board-salaries-tech-stack-scraper)\n- [Ashby & Lever Startup Jobs & Hiring Signals Scraper](https://apify.com/storeintel/ashby-lever-startup-jobs-hiring-signals-scraper)\n- [B2B Company Tech Stack & Hiring Velocity Detector](https://apify.com/storeintel/b2b-company-tech-stack-hiring-velocity-detector)",
+        "height": 420,
+        "width": 620,
+        "color": 4
+      },
+      "id": "sticky-5",
+      "name": "Workflow Documentation",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "schedule-5",
+      "name": "Daily Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/storeintel~greenhouse-lever-ashby-jobs-scraper/run-sync-get-dataset-items",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_APIFY_API_TOKEN"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"companyTargets\": [\n    \"https://boards.greenhouse.io/stripe\",\n    \"https://jobs.ashbyhq.com/openai\"\n  ],\n  \"maxJobsPerCompany\": 20,\n  \"includeCompanySummary\": true,\n  \"keywordFilter\": \"\",\n  \"remoteOnly\": false\n}",
+        "options": {
+          "timeout": 180000
+        }
+      },
+      "id": "apify-http-5",
+      "name": "Run StoreIntel Apify Actor (greenhouse-lever-ashby-jobs-scraper)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        520,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": {
+          "string": [
+            {
+              "name": "source_actor",
+              "value": "storeintel/greenhouse-lever-ashby-jobs-scraper"
+            },
+            {
+              "name": "actor_store_url",
+              "value": "https://apify.com/storeintel/greenhouse-lever-ashby-jobs-scraper"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "enrich-fields-5",
+      "name": "Normalize Lead Output for CRM / Sheets",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        820,
+        580
+      ]
+    }
+  ],
+  "connections": {
+    "Daily Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Run StoreIntel Apify Actor (greenhouse-lever-ashby-jobs-scraper)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run StoreIntel Apify Actor (greenhouse-lever-ashby-jobs-scraper)": {
+      "main": [
+        [
+          {
+            "node": "Normalize Lead Output for CRM / Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "storeintelActorId": "b299QmfDV8Zcrcn2B",
+    "storeintelActorUrl": "https://apify.com/storeintel/greenhouse-lever-ashby-jobs-scraper"
+  }
+}

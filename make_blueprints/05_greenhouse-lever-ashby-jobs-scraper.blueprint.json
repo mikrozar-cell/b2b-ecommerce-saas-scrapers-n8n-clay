@@ -1,0 +1,73 @@
+{
+  "name": "StoreIntel: Track B2B Company Hiring Velocity, Salaries & Tech Stack from Greenhouse, Lever & Ashby",
+  "flow": [
+    {
+      "id": 1,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": {
+        "handleErrors": true,
+        "useNewZLibDeCompress": true
+      },
+      "mapper": {
+        "url": "https://api.apify.com/v2/acts/storeintel~greenhouse-lever-ashby-jobs-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "serializeUrl": false,
+        "method": "post",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "qs": [],
+        "bodyType": "raw",
+        "parseResponse": true,
+        "rawBody": "{\n  \"companyTargets\": [\n    \"https://boards.greenhouse.io/stripe\",\n    \"https://jobs.ashbyhq.com/openai\"\n  ],\n  \"maxJobsPerCompany\": 20,\n  \"includeCompanySummary\": true,\n  \"keywordFilter\": \"\",\n  \"remoteOnly\": false\n}",
+        "timeout": "300"
+      },
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0,
+          "name": "Run greenhouse-lever-ashby-jobs-scraper"
+        },
+        "restore": {}
+      }
+    },
+    {
+      "id": 2,
+      "module": "builtin:BasicFeeder",
+      "version": 1,
+      "parameters": {},
+      "mapper": {
+        "array": "{{1.data}}"
+      },
+      "metadata": {
+        "designer": {
+          "x": 300,
+          "y": 0,
+          "name": "Iterate Scraped Leads"
+        },
+        "restore": {}
+      }
+    }
+  ],
+  "metadata": {
+    "instant": false,
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "sequential": false,
+      "confidential": false,
+      "dataloss": false,
+      "dlq": false
+    },
+    "designer": {
+      "orphans": []
+    },
+    "zone": "eu1.make.com"
+  }
+}

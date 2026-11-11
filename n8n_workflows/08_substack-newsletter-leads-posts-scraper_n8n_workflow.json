@@ -1,0 +1,133 @@
+{
+  "name": "Qualify Substack Newsletters for B2B Sponsorships & Extract Top Posts Engagement",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Qualify Substack Newsletters for B2B Sponsorships & Extract Top Posts Engagement\n**Powered by StoreIntel Labs on Apify:** [Substack Newsletter Leads, Authors & Posts Scraper: Engagement & Sponsorship Data](https://apify.com/storeintel/substack-newsletter-leads-posts-scraper)\n\nExtract Substack publication sponsor leads (author bio, Twitter/X handle, paid subscription status, average reactions & comments) and full post archives.\n\n### Quick Setup (30 seconds)\n1. Get your free Apify API token at `https://console.apify.com/settings/integrations`.\n2. Open the **Run StoreIntel Apify Actor** node and paste your token in the `Authorization` header (`Bearer YOUR_APIFY_TOKEN`).\n3. Customize the JSON input body or connect it to your Google Sheet / Webhook trigger.\n\n### Pre-Configured Apify Task Templates\n- [Substack Newsletter B2B Sponsorship Leads Scraper](https://apify.com/storeintel/substack-newsletter-b2b-sponsorship-leads-scraper)\n- [Substack Posts, Reactions & Engagement Scraper](https://apify.com/storeintel/substack-top-posts-engagement-metrics-scraper)\n- [Substack Paid Newsletter Authors & Socials Scraper](https://apify.com/storeintel/substack-paid-newsletter-authors-twitter-scraper)",
+        "height": 420,
+        "width": 620,
+        "color": 4
+      },
+      "id": "sticky-8",
+      "name": "Workflow Documentation",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "schedule-8",
+      "name": "Daily Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/storeintel~substack-newsletter-leads-posts-scraper/run-sync-get-dataset-items",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_APIFY_API_TOKEN"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"publicationTargets\": [\n    \"pragmaticengineer\",\n    \"astralcodexten\"\n  ],\n  \"scrapePublicationProfiles\": true,\n  \"scrapePosts\": true,\n  \"maxPostsPerPublication\": 15,\n  \"postSortBy\": \"new\"\n}",
+        "options": {
+          "timeout": 180000
+        }
+      },
+      "id": "apify-http-8",
+      "name": "Run StoreIntel Apify Actor (substack-newsletter-leads-posts-scraper)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        520,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": {
+          "string": [
+            {
+              "name": "source_actor",
+              "value": "storeintel/substack-newsletter-leads-posts-scraper"
+            },
+            {
+              "name": "actor_store_url",
+              "value": "https://apify.com/storeintel/substack-newsletter-leads-posts-scraper"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "enrich-fields-8",
+      "name": "Normalize Lead Output for CRM / Sheets",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        820,
+        580
+      ]
+    }
+  ],
+  "connections": {
+    "Daily Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Run StoreIntel Apify Actor (substack-newsletter-leads-posts-scraper)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run StoreIntel Apify Actor (substack-newsletter-leads-posts-scraper)": {
+      "main": [
+        [
+          {
+            "node": "Normalize Lead Output for CRM / Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "storeintelActorId": "dSOldJQGTbikEda10",
+    "storeintelActorUrl": "https://apify.com/storeintel/substack-newsletter-leads-posts-scraper"
+  }
+}

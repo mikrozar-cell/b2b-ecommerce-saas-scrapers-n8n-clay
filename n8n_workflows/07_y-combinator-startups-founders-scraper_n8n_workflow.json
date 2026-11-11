@@ -1,0 +1,133 @@
+{
+  "name": "Scrape Y Combinator Startup Founders with Direct Personal LinkedIn & X/Twitter Links",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Scrape Y Combinator Startup Founders with Direct Personal LinkedIn & X/Twitter Links\n**Powered by StoreIntel Labs on Apify:** [Y Combinator (YC) Startups & Founders Scraper: LinkedIn, X & Batch Data](https://apify.com/storeintel/y-combinator-startups-founders-scraper)\n\nExtract structured Y Combinator startup profiles (batch, status, team headcount, website, tags) and emit individual founder B2B lead records with direct personal LinkedIn and X/Twitter URLs.\n\n### Quick Setup (30 seconds)\n1. Get your free Apify API token at `https://console.apify.com/settings/integrations`.\n2. Open the **Run StoreIntel Apify Actor** node and paste your token in the `Authorization` header (`Bearer YOUR_APIFY_TOKEN`).\n3. Customize the JSON input body or connect it to your Google Sheet / Webhook trigger.\n\n### Pre-Configured Apify Task Templates\n- [YC Founder LinkedIn & X/Twitter B2B Leads Scraper](https://apify.com/storeintel/yc-founder-linkedin-twitter-b2b-leads-scraper)\n- [Y Combinator AI Startups & Batch Directory Scraper](https://apify.com/storeintel/y-combinator-w24-s24-ai-startups-directory-scraper)\n- [YC Startup Team Size, Website & Socials Scraper](https://apify.com/storeintel/yc-startup-team-size-hiring-status-scraper)",
+        "height": 420,
+        "width": 620,
+        "color": 4
+      },
+      "id": "sticky-7",
+      "name": "Workflow Documentation",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "schedule-7",
+      "name": "Daily Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/storeintel~y-combinator-startups-founders-scraper/run-sync-get-dataset-items",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_APIFY_API_TOKEN"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"companySlugsOrUrls\": [\n    \"supabase\",\n    \"resend\",\n    \"posthog\",\n    \"cal-com\"\n  ],\n  \"emitIndividualFounderLeads\": true\n}",
+        "options": {
+          "timeout": 180000
+        }
+      },
+      "id": "apify-http-7",
+      "name": "Run StoreIntel Apify Actor (y-combinator-startups-founders-scraper)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        520,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": {
+          "string": [
+            {
+              "name": "source_actor",
+              "value": "storeintel/y-combinator-startups-founders-scraper"
+            },
+            {
+              "name": "actor_store_url",
+              "value": "https://apify.com/storeintel/y-combinator-startups-founders-scraper"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "enrich-fields-7",
+      "name": "Normalize Lead Output for CRM / Sheets",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        820,
+        580
+      ]
+    }
+  ],
+  "connections": {
+    "Daily Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Run StoreIntel Apify Actor (y-combinator-startups-founders-scraper)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run StoreIntel Apify Actor (y-combinator-startups-founders-scraper)": {
+      "main": [
+        [
+          {
+            "node": "Normalize Lead Output for CRM / Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "storeintelActorId": "ixaK57YRKe7tj1q3y",
+    "storeintelActorUrl": "https://apify.com/storeintel/y-combinator-startups-founders-scraper"
+  }
+}

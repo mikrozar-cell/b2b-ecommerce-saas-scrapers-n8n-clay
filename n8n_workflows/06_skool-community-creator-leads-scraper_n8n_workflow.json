@@ -1,0 +1,133 @@
+{
+  "name": "Discover High-MRR Paid Skool Communities & Enrich Creator Instagram/YouTube/LinkedIn Leads",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Discover High-MRR Paid Skool Communities & Enrich Creator Instagram/YouTube/LinkedIn Leads\n**Powered by StoreIntel Labs on Apify:** [Skool Community & Creator Leads Scraper: Estimated MRR, Pricing & Socials](https://apify.com/storeintel/skool-community-creator-leads-scraper)\n\nDiscover Skool communities by keyword, calculate estimated Monthly Recurring Revenue (MRR = members × monthly subscription price), and extract the founder's Instagram, YouTube, LinkedIn, X/Twitter, and personal website.\n\n### Quick Setup (30 seconds)\n1. Get your free Apify API token at `https://console.apify.com/settings/integrations`.\n2. Open the **Run StoreIntel Apify Actor** node and paste your token in the `Authorization` header (`Bearer YOUR_APIFY_TOKEN`).\n3. Customize the JSON input body or connect it to your Google Sheet / Webhook trigger.\n\n### Pre-Configured Apify Task Templates\n- [Skool Paid Community MRR & Pricing Calculator Scraper](https://apify.com/storeintel/skool-paid-community-mrr-revenue-calculator-scraper)\n- [Skool Creator Instagram, YouTube & Social Leads Scraper](https://apify.com/storeintel/skool-creator-instagram-youtube-email-leads-scraper)\n- [Skool High-Commission Affiliate Communities Finder](https://apify.com/storeintel/skool-affiliate-program-high-ticket-courses-finder)",
+        "height": 420,
+        "width": 620,
+        "color": 4
+      },
+      "id": "sticky-6",
+      "name": "Workflow Documentation",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "schedule-6",
+      "name": "Daily Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/storeintel~skool-community-creator-leads-scraper/run-sync-get-dataset-items",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_APIFY_API_TOKEN"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"groupSlugsOrUrls\": [\n    \"safecreditclub\"\n  ],\n  \"searchQueries\": [\n    \"ai\",\n    \"agency\"\n  ],\n  \"maxGroupsPerQuery\": 10,\n  \"enrichCreatorSocials\": true,\n  \"onlyPaidCommunities\": false,\n  \"minEstimatedMrrUsd\": 0\n}",
+        "options": {
+          "timeout": 180000
+        }
+      },
+      "id": "apify-http-6",
+      "name": "Run StoreIntel Apify Actor (skool-community-creator-leads-scraper)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        520,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": {
+          "string": [
+            {
+              "name": "source_actor",
+              "value": "storeintel/skool-community-creator-leads-scraper"
+            },
+            {
+              "name": "actor_store_url",
+              "value": "https://apify.com/storeintel/skool-community-creator-leads-scraper"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "enrich-fields-6",
+      "name": "Normalize Lead Output for CRM / Sheets",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        820,
+        580
+      ]
+    }
+  ],
+  "connections": {
+    "Daily Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Run StoreIntel Apify Actor (skool-community-creator-leads-scraper)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run StoreIntel Apify Actor (skool-community-creator-leads-scraper)": {
+      "main": [
+        [
+          {
+            "node": "Normalize Lead Output for CRM / Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "storeintelActorId": "PbXz3nAsQS4EKDwd2",
+    "storeintelActorUrl": "https://apify.com/storeintel/skool-community-creator-leads-scraper"
+  }
+}

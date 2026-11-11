@@ -1,0 +1,73 @@
+{
+  "name": "StoreIntel: Find WordPress & WooCommerce Plugins with High Active Installs & 1-Star Churn Reviews",
+  "flow": [
+    {
+      "id": 1,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": {
+        "handleErrors": true,
+        "useNewZLibDeCompress": true
+      },
+      "mapper": {
+        "url": "https://api.apify.com/v2/acts/storeintel~wordpress-plugin-directory-scraper/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN",
+        "serializeUrl": false,
+        "method": "post",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "qs": [],
+        "bodyType": "raw",
+        "parseResponse": true,
+        "rawBody": "{\n  \"pluginSlugsOrUrls\": [\n    \"woocommerce\",\n    \"elementor\"\n  ],\n  \"scrapePluginProfiles\": true,\n  \"scrapeReviews\": true,\n  \"maxReviewsPerPlugin\": 25,\n  \"reviewRatingFilter\": 1\n}",
+        "timeout": "300"
+      },
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0,
+          "name": "Run wordpress-plugin-directory-scraper"
+        },
+        "restore": {}
+      }
+    },
+    {
+      "id": 2,
+      "module": "builtin:BasicFeeder",
+      "version": 1,
+      "parameters": {},
+      "mapper": {
+        "array": "{{1.data}}"
+      },
+      "metadata": {
+        "designer": {
+          "x": 300,
+          "y": 0,
+          "name": "Iterate Scraped Leads"
+        },
+        "restore": {}
+      }
+    }
+  ],
+  "metadata": {
+    "instant": false,
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "sequential": false,
+      "confidential": false,
+      "dataloss": false,
+      "dlq": false
+    },
+    "designer": {
+      "orphans": []
+    },
+    "zone": "eu1.make.com"
+  }
+}

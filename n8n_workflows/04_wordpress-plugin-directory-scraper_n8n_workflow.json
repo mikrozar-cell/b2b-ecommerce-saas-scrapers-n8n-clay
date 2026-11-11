@@ -1,0 +1,133 @@
+{
+  "name": "Find WordPress & WooCommerce Plugins with High Active Installs & 1-Star Churn Reviews",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Find WordPress & WooCommerce Plugins with High Active Installs & 1-Star Churn Reviews\n**Powered by StoreIntel Labs on Apify:** [WordPress Plugin Directory Scraper: Active Installs, Support & Reviews](https://apify.com/storeintel/wordpress-plugin-directory-scraper)\n\nQuery the official WordPress.org Plugin API for active installs, support thread resolution rates, PHP/WP compatibility, donate/commercial links, and 1-star user reviews.\n\n### Quick Setup (30 seconds)\n1. Get your free Apify API token at `https://console.apify.com/settings/integrations`.\n2. Open the **Run StoreIntel Apify Actor** node and paste your token in the `Authorization` header (`Bearer YOUR_APIFY_TOKEN`).\n3. Customize the JSON input body or connect it to your Google Sheet / Webhook trigger.\n\n### Pre-Configured Apify Task Templates\n- [WooCommerce & WordPress Plugin Active Installs & Developer Leads Scraper](https://apify.com/storeintel/woocommerce-plugin-active-installs-leads-scraper)\n- [WordPress Plugin 1-Star Reviews & Competitor Churn Scraper](https://apify.com/storeintel/wordpress-plugin-1-star-reviews-churn-scraper)\n- [Abandoned WordPress Plugins & Unresolved Support Threads Finder](https://apify.com/storeintel/wordpress-abandoned-plugin-unresolved-support-finder)",
+        "height": 420,
+        "width": 620,
+        "color": 4
+      },
+      "id": "sticky-4",
+      "name": "Workflow Documentation",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "schedule-4",
+      "name": "Daily Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/storeintel~wordpress-plugin-directory-scraper/run-sync-get-dataset-items",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_APIFY_API_TOKEN"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"pluginSlugsOrUrls\": [\n    \"woocommerce\",\n    \"elementor\"\n  ],\n  \"scrapePluginProfiles\": true,\n  \"scrapeReviews\": true,\n  \"maxReviewsPerPlugin\": 25,\n  \"reviewRatingFilter\": 1\n}",
+        "options": {
+          "timeout": 180000
+        }
+      },
+      "id": "apify-http-4",
+      "name": "Run StoreIntel Apify Actor (wordpress-plugin-directory-scraper)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        520,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": {
+          "string": [
+            {
+              "name": "source_actor",
+              "value": "storeintel/wordpress-plugin-directory-scraper"
+            },
+            {
+              "name": "actor_store_url",
+              "value": "https://apify.com/storeintel/wordpress-plugin-directory-scraper"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "enrich-fields-4",
+      "name": "Normalize Lead Output for CRM / Sheets",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        820,
+        580
+      ]
+    }
+  ],
+  "connections": {
+    "Daily Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Run StoreIntel Apify Actor (wordpress-plugin-directory-scraper)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run StoreIntel Apify Actor (wordpress-plugin-directory-scraper)": {
+      "main": [
+        [
+          {
+            "node": "Normalize Lead Output for CRM / Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "storeintelActorId": "0EbRXhj52ssBU1Rf7",
+    "storeintelActorUrl": "https://apify.com/storeintel/wordpress-plugin-directory-scraper"
+  }
+}

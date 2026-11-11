@@ -1,0 +1,133 @@
+{
+  "name": "Monitor Competitor 1-Star Shopify App Reviews for Churn Lead Generation",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Monitor Competitor 1-Star Shopify App Reviews for Churn Lead Generation\n**Powered by StoreIntel Labs on Apify:** [Shopify App Store Scraper: Apps, Pricing, Developer Leads & 1-Star Reviews](https://apify.com/storeintel/shopify-app-store-scraper)\n\nTrack newly posted 1-star and 2-star reviews on competing Shopify apps every morning, extract the frustrated merchant's store name, country, and time spent using the app, and alert your sales team in Slack/HubSpot.\n\n### Quick Setup (30 seconds)\n1. Get your free Apify API token at `https://console.apify.com/settings/integrations`.\n2. Open the **Run StoreIntel Apify Actor** node and paste your token in the `Authorization` header (`Bearer YOUR_APIFY_TOKEN`).\n3. Customize the JSON input body or connect it to your Google Sheet / Webhook trigger.\n\n### Pre-Configured Apify Task Templates\n- [Shopify App 1-Star Reviews & Competitor Churn Leads Scraper](https://apify.com/storeintel/shopify-app-1-star-churn-leads-scraper)\n- [Shopify App Developer Emails, Pricing Plans & SaaS Leads Scraper](https://apify.com/storeintel/shopify-app-developer-email-pricing-scraper)\n- [Shopify App Store Category Ranking & Keyword Discovery Scraper](https://apify.com/storeintel/shopify-category-competitor-ranking-scraper)",
+        "height": 420,
+        "width": 620,
+        "color": 4
+      },
+      "id": "sticky-2",
+      "name": "Workflow Documentation",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "schedule-2",
+      "name": "Daily Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/storeintel~shopify-app-store-scraper/run-sync-get-dataset-items",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_APIFY_API_TOKEN"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"appHandlesOrUrls\": [\n    \"klaviyo-email-marketing\",\n    \"judgeme\"\n  ],\n  \"scrapeAppProfiles\": true,\n  \"scrapeReviews\": true,\n  \"maxReviewsPerApp\": 25,\n  \"reviewRatingFilter\": 1,\n  \"reviewSortBy\": \"newest\"\n}",
+        "options": {
+          "timeout": 180000
+        }
+      },
+      "id": "apify-http-2",
+      "name": "Run StoreIntel Apify Actor (shopify-app-store-scraper)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        520,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": {
+          "string": [
+            {
+              "name": "source_actor",
+              "value": "storeintel/shopify-app-store-scraper"
+            },
+            {
+              "name": "actor_store_url",
+              "value": "https://apify.com/storeintel/shopify-app-store-scraper"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "enrich-fields-2",
+      "name": "Normalize Lead Output for CRM / Sheets",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        820,
+        580
+      ]
+    }
+  ],
+  "connections": {
+    "Daily Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Run StoreIntel Apify Actor (shopify-app-store-scraper)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run StoreIntel Apify Actor (shopify-app-store-scraper)": {
+      "main": [
+        [
+          {
+            "node": "Normalize Lead Output for CRM / Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "storeintelActorId": "jun7NukPGv4xmLJMg",
+    "storeintelActorUrl": "https://apify.com/storeintel/shopify-app-store-scraper"
+  }
+}

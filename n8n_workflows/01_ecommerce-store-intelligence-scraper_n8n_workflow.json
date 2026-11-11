@@ -1,0 +1,133 @@
+{
+  "name": "Scrape Shopify & WooCommerce Store Emails, Tech Stack & Exact Stock to Google Sheets",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Scrape Shopify & WooCommerce Store Emails, Tech Stack & Exact Stock to Google Sheets\n**Powered by StoreIntel Labs on Apify:** [Shopify & WooCommerce Scraper: Products, Stock & Store Leads](https://apify.com/storeintel/ecommerce-store-intelligence-scraper)\n\nAutomatically enrich a list of Shopify or WooCommerce store domains with verified contact emails, social links, 30+ detected pixels/apps (Klaviyo, Meta Pixel, TikTok, Judge.me, Gorgias), and exact variant inventory.\n\n### Quick Setup (30 seconds)\n1. Get your free Apify API token at `https://console.apify.com/settings/integrations`.\n2. Open the **Run StoreIntel Apify Actor** node and paste your token in the `Authorization` header (`Bearer YOUR_APIFY_TOKEN`).\n3. Customize the JSON input body or connect it to your Google Sheet / Webhook trigger.\n\n### Pre-Configured Apify Task Templates\n- [Shopify Store Email, Tech Stack & Exact Inventory Scraper](https://apify.com/storeintel/shopify-store-email-tech-stack-exact-inventory-scraper)\n- [WooCommerce & Shopify Product Price & Discount Scraper](https://apify.com/storeintel/woocommerce-product-price-inventory-scraper)\n- [Shopify Judge.me, Okendo & Yotpo Product Reviews Scraper](https://apify.com/storeintel/shopify-judgeme-loox-yotpo-reviews-scraper)",
+        "height": 420,
+        "width": 620,
+        "color": 4
+      },
+      "id": "sticky-1",
+      "name": "Workflow Documentation",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "schedule-1",
+      "name": "Daily Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/storeintel~ecommerce-store-intelligence-scraper/run-sync-get-dataset-items",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_APIFY_API_TOKEN"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"domains\": [\n    \"tentree.com\",\n    \"allbirds.com\"\n  ],\n  \"scrapeProducts\": true,\n  \"maxProductsPerStore\": 25,\n  \"includeExactInventory\": true,\n  \"includeStoreLeadProfile\": true,\n  \"includeReviews\": true,\n  \"maxReviewsPerStore\": 20\n}",
+        "options": {
+          "timeout": 180000
+        }
+      },
+      "id": "apify-http-1",
+      "name": "Run StoreIntel Apify Actor (ecommerce-store-intelligence-scraper)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        520,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": {
+          "string": [
+            {
+              "name": "source_actor",
+              "value": "storeintel/ecommerce-store-intelligence-scraper"
+            },
+            {
+              "name": "actor_store_url",
+              "value": "https://apify.com/storeintel/ecommerce-store-intelligence-scraper"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "enrich-fields-1",
+      "name": "Normalize Lead Output for CRM / Sheets",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        820,
+        580
+      ]
+    }
+  ],
+  "connections": {
+    "Daily Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Run StoreIntel Apify Actor (ecommerce-store-intelligence-scraper)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run StoreIntel Apify Actor (ecommerce-store-intelligence-scraper)": {
+      "main": [
+        [
+          {
+            "node": "Normalize Lead Output for CRM / Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "storeintelActorId": "a1BKnEAMDeA1CBwIn",
+    "storeintelActorUrl": "https://apify.com/storeintel/ecommerce-store-intelligence-scraper"
+  }
+}
