@@ -3,18 +3,50 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## Track B2B Company Hiring Velocity, Salaries & Tech Stack from Greenhouse, Lever & Ashby\n**Powered by StoreIntel Labs on Apify:** [Greenhouse, Lever & Ashby ATS Jobs Scraper: Salaries & B2B Tech Stack Signals](https://apify.com/storeintel/greenhouse-lever-ashby-jobs-scraper)\n\nAutomatically scrape open roles across Greenhouse, Lever, and AshbyHQ job boards, parse salary ranges, and detect 80+ enterprise SaaS/cloud tools (Snowflake, AWS, Kubernetes, Salesforce, HubSpot, Datadog) mentioned in job descriptions.\n\n### Quick Setup (30 seconds)\n1. Get your free Apify API token at `https://console.apify.com/settings/integrations`.\n2. Open the **Run StoreIntel Apify Actor** node and paste your token in the `Authorization` header (`Bearer YOUR_APIFY_TOKEN`).\n3. Customize the JSON input body or connect it to your Google Sheet / Webhook trigger.\n\n### Pre-Configured Apify Task Templates\n- [Greenhouse Job Board, Salaries & Tech Stack Scraper](https://apify.com/storeintel/greenhouse-job-board-salaries-tech-stack-scraper)\n- [Ashby & Lever Startup Jobs & Hiring Signals Scraper](https://apify.com/storeintel/ashby-lever-startup-jobs-hiring-signals-scraper)\n- [B2B Company Tech Stack & Hiring Velocity Detector](https://apify.com/storeintel/b2b-company-tech-stack-hiring-velocity-detector)",
-        "height": 420,
-        "width": 620,
+        "content": "## Track B2B Company Hiring Velocity, Salaries & Tech Stack from Greenhouse, Lever & Ashby\n\n**Actor:** [Greenhouse, Lever & Ashby ATS Jobs Scraper: Salaries & B2B Tech Stack Signals](https://apify.com/storeintel/greenhouse-lever-ashby-jobs-scraper)\n\n### What this workflow does\nAutomatically scrape open roles across Greenhouse, Lever, and AshbyHQ job boards, parse salary ranges, and detect 80+ enterprise SaaS/cloud tools (Snowflake, AWS, Kubernetes, Salesforce, HubSpot, Datadog) mentioned in job descriptions.\n\n### Who is this for?\n- **B2B Sales & Outbound Agencies** building targeted prospect lists.\n- **RevOps & Growth Teams** enriching CRM records automatically.\n- **Market Researchers** tracking pricing, reviews, and hiring velocity.\n\n### Pre-Built Specialized Apify Tasks\n- [Greenhouse Job Board, Salaries & Tech Stack Scraper](https://apify.com/storeintel/greenhouse-job-board-salaries-tech-stack-scraper)\n- [Ashby & Lever Startup Jobs & Hiring Signals Scraper](https://apify.com/storeintel/ashby-lever-startup-jobs-hiring-signals-scraper)\n- [B2B Company Tech Stack & Hiring Velocity Detector](https://apify.com/storeintel/b2b-company-tech-stack-hiring-velocity-detector)",
+        "height": 440,
+        "width": 460,
         "color": 4
       },
-      "id": "sticky-5",
-      "name": "Workflow Documentation",
+      "id": "sticky-overview-5",
+      "name": "Workflow Overview & Use Case",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        180,
-        120
+        120,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Step 1: Configuration & Apify Setup\n\n1. Create a free account or sign in at [Apify Store — StoreIntel Labs](https://apify.com/storeintel/greenhouse-lever-ashby-jobs-scraper).\n2. Copy your personal API Token from **Apify Console → Settings → Integrations**.\n3. Open the **1. Set Apify Token & Target Parameters** node below and replace `YOUR_APIFY_API_TOKEN` with your token.\n4. Customize the target URLs, slugs, or search keywords in the JSON payload.",
+        "height": 280,
+        "width": 480,
+        "color": 5
+      },
+      "id": "sticky-setup-5",
+      "name": "Setup Instructions",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        620,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Step 2: Lead Qualification & Export\n\n- **Filter Qualified B2B Leads:** Automatically removes empty or incomplete records before writing to your CRM.\n- **Map CRM & Outreach Fields:** Normalizes fields into a clean table schema.\n- **Append to Google Sheets:** Connect your Google Sheets OAuth2 credential and select your destination spreadsheet (or swap this node for HubSpot, Pipedrive, Instantly, or Slack).",
+        "height": 280,
+        "width": 560,
+        "color": 6
+      },
+      "id": "sticky-downstream-5",
+      "name": "Qualification & Export Notes",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        160
       ]
     },
     {
@@ -23,31 +55,63 @@
           "interval": [
             {
               "field": "days",
-              "daysInterval": 1
+              "daysInterval": 1,
+              "triggerAtHour": 8
             }
           ]
         }
       },
-      "id": "schedule-5",
-      "name": "Daily Schedule Trigger",
+      "id": "schedule-trigger-5",
+      "name": "Daily Morning Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        240,
-        580
+        380,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "apify_token",
+              "name": "apify_api_token",
+              "value": "YOUR_APIFY_API_TOKEN",
+              "type": "string"
+            },
+            {
+              "id": "actor_slug",
+              "name": "actor_slug",
+              "value": "storeintel~greenhouse-lever-ashby-jobs-scraper",
+              "type": "string"
+            },
+            {
+              "id": "actor_input",
+              "name": "actor_input_json",
+              "value": "{\"companyTargets\": [\"https://boards.greenhouse.io/stripe\", \"https://jobs.ashbyhq.com/openai\"], \"maxJobsPerCompany\": 20, \"includeCompanySummary\": true, \"keywordFilter\": \"\", \"remoteOnly\": false}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "config-node-5",
+      "name": "1. Set Apify Token & Target Parameters",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        660,
+        560
       ]
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "https://api.apify.com/v2/acts/storeintel~greenhouse-lever-ashby-jobs-scraper/run-sync-get-dataset-items",
+        "url": "=https://api.apify.com/v2/acts/{{ $json.actor_slug }}/run-sync-get-dataset-items?token={{ $json.apify_api_token }}",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
-            {
-              "name": "Authorization",
-              "value": "Bearer YOUR_APIFY_API_TOKEN"
-            },
             {
               "name": "Content-Type",
               "value": "application/json"
@@ -56,64 +120,171 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"companyTargets\": [\n    \"https://boards.greenhouse.io/stripe\",\n    \"https://jobs.ashbyhq.com/openai\"\n  ],\n  \"maxJobsPerCompany\": 20,\n  \"includeCompanySummary\": true,\n  \"keywordFilter\": \"\",\n  \"remoteOnly\": false\n}",
+        "jsonBody": "={{ $json.actor_input_json }}",
         "options": {
           "timeout": 180000
         }
       },
-      "id": "apify-http-5",
-      "name": "Run StoreIntel Apify Actor (greenhouse-lever-ashby-jobs-scraper)",
+      "id": "run-apify-5",
+      "name": "2. Run StoreIntel Scraper (greenhouse-lever-ashby-jobs-scraper)",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        520,
-        580
+        920,
+        560
       ]
     },
     {
       "parameters": {
-        "keepOnlySet": false,
-        "values": {
-          "string": [
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
             {
-              "name": "source_actor",
-              "value": "storeintel/greenhouse-lever-ashby-jobs-scraper"
+              "id": "cond-1",
+              "leftValue": "={{ $json.record_type }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "filter-leads-5",
+      "name": "3. Filter Valid B2B Records",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        1180,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "includeOtherFields": true,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "source-1",
+              "name": "enrichment_source",
+              "value": "storeintel/greenhouse-lever-ashby-jobs-scraper",
+              "type": "string"
             },
             {
-              "name": "actor_store_url",
-              "value": "https://apify.com/storeintel/greenhouse-lever-ashby-jobs-scraper"
+              "id": "source-url",
+              "name": "apify_actor_url",
+              "value": "https://apify.com/storeintel/greenhouse-lever-ashby-jobs-scraper",
+              "type": "string"
+            },
+            {
+              "id": "synced-at",
+              "name": "synced_to_crm_at",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
             }
           ]
         },
         "options": {}
       },
-      "id": "enrich-fields-5",
-      "name": "Normalize Lead Output for CRM / Sheets",
+      "id": "format-crm-5",
+      "name": "4. Enrich & Map CRM Lead Fields",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        820,
-        580
+        1420,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Leads"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "google-sheets-5",
+      "name": "5. Save Enriched Leads to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1660,
+        560
       ]
     }
   ],
   "connections": {
-    "Daily Schedule Trigger": {
+    "Daily Morning Trigger": {
       "main": [
         [
           {
-            "node": "Run StoreIntel Apify Actor (greenhouse-lever-ashby-jobs-scraper)",
+            "node": "1. Set Apify Token & Target Parameters",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run StoreIntel Apify Actor (greenhouse-lever-ashby-jobs-scraper)": {
+    "1. Set Apify Token & Target Parameters": {
       "main": [
         [
           {
-            "node": "Normalize Lead Output for CRM / Sheets",
+            "node": "2. Run StoreIntel Scraper (greenhouse-lever-ashby-jobs-scraper)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2. Run StoreIntel Scraper (greenhouse-lever-ashby-jobs-scraper)": {
+      "main": [
+        [
+          {
+            "node": "3. Filter Valid B2B Records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "3. Filter Valid B2B Records": {
+      "main": [
+        [
+          {
+            "node": "4. Enrich & Map CRM Lead Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "4. Enrich & Map CRM Lead Fields": {
+      "main": [
+        [
+          {
+            "node": "5. Save Enriched Leads to Google Sheets",
             "type": "main",
             "index": 0
           }
