@@ -19,7 +19,7 @@
     },
     {
       "parameters": {
-        "content": "## Step 1: Configuration & Apify Setup\n\n1. Create a free account or sign in at [Apify Store — StoreIntel Labs](https://apify.com/storeintel/greenhouse-lever-ashby-jobs-scraper).\n2. Copy your personal API Token from **Apify Console → Settings → Integrations**.\n3. Open the **1. Set Apify Token & Target Parameters** node below and replace `YOUR_APIFY_API_TOKEN` with your token.\n4. Customize the target URLs, slugs, or search keywords in the JSON payload.",
+        "content": "## Step 1: Configuration & Apify Credentials\n\n1. Create a free account or sign in at [Apify Store — StoreIntel Labs](https://apify.com/storeintel/greenhouse-lever-ashby-jobs-scraper).\n2. Copy your personal API Token from **Apify Console → Settings → Integrations**.\n3. In the **2. Run StoreIntel Scraper** node, configure the **Header Auth** credential (`Name: Authorization`, `Value: Bearer YOUR_APIFY_TOKEN`).\n4. Customize the target URLs, slugs, or search keywords in **1. Configure Target Parameters**.",
         "height": 280,
         "width": 480,
         "color": 5
@@ -75,12 +75,6 @@
         "assignments": {
           "assignments": [
             {
-              "id": "apify_token",
-              "name": "apify_api_token",
-              "value": "YOUR_APIFY_API_TOKEN",
-              "type": "string"
-            },
-            {
               "id": "actor_slug",
               "name": "actor_slug",
               "value": "storeintel~greenhouse-lever-ashby-jobs-scraper",
@@ -97,7 +91,7 @@
         "options": {}
       },
       "id": "config-node-5",
-      "name": "1. Set Apify Token & Target Parameters",
+      "name": "1. Configure Target Parameters",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
@@ -108,7 +102,9 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://api.apify.com/v2/acts/{{ $json.actor_slug }}/run-sync-get-dataset-items?token={{ $json.apify_api_token }}",
+        "url": "=https://api.apify.com/v2/acts/{{ $json.actor_slug }}/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -132,7 +128,13 @@
       "position": [
         920,
         560
-      ]
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "apify-header-auth",
+          "name": "Apify API Bearer Token"
+        }
+      }
     },
     {
       "parameters": {
@@ -240,14 +242,14 @@
       "main": [
         [
           {
-            "node": "1. Set Apify Token & Target Parameters",
+            "node": "1. Configure Target Parameters",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "1. Set Apify Token & Target Parameters": {
+    "1. Configure Target Parameters": {
       "main": [
         [
           {
