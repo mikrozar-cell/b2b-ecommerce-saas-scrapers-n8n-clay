@@ -5,6 +5,8 @@ Official open-source automation templates, **n8n workflows**, **Make.com bluepri
 - **1-Click Shared Clay.com Workbook Template:** [https://app.clay.com/shared-workbook/share_0toe8fdqHgFAJtmU6wQ](https://app.clay.com/shared-workbook/share_0toe8fdqHgFAJtmU6wQ)
 - **Live B2B Sample Datasets (Free CSV Explorer):** [https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/samples.html](https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/samples.html)
 - **Interactive Web Hub:** [https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/](https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/)
+- **Official n8n Community Showcase & Discussion:** [https://community.n8n.io/t/i-open-sourced-8-ready-to-import-n8n-workflows-for-b2b-lead-scraping-shopify-stores-skool-mrr-yc-founders-ats-tech-stacks-1-star-saas-churn/328374](https://community.n8n.io/t/i-open-sourced-8-ready-to-import-n8n-workflows-for-b2b-lead-scraping-shopify-stores-skool-mrr-yc-founders-ats-tech-stacks-1-star-saas-churn/328374)
+- **DEV.to Engineering Deep-Dive Article:** [https://dev.to/storeintel/open-sourced-8-browserless-b2b-lead-e-commerce-scrapers-for-clay-n8n-make-4-free-csv-3l3j](https://dev.to/storeintel/open-sourced-8-browserless-b2b-lead-e-commerce-scrapers-for-clay-n8n-make-4-free-csv-3l3j)
 
 All 8 Actors and 24 specialized Task configurations run over **ultra-fast asynchronous HTTP / JSON / RPC** with **zero headless browser overhead** (`$0.01–$0.03 per 1,000 items` compute cost).
 
