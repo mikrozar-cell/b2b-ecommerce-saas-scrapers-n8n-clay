@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/sitemap.xml
