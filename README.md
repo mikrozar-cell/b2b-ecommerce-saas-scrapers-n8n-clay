@@ -4,6 +4,7 @@ Official open-source automation templates, **n8n workflows**, **Make.com bluepri
 
 - **1-Click Shared Clay.com Workbook Template:** [https://app.clay.com/shared-workbook/share_0toe8fdqHgFAJtmU6wQ](https://app.clay.com/shared-workbook/share_0toe8fdqHgFAJtmU6wQ)
 - **Live B2B Sample Datasets (Free CSV Explorer):** [https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/samples.html](https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/samples.html)
+- **Instant Download — Full 6-Database B2B CSV Bundle ($49 on Gumroad):** [https://mikrozaar.gumroad.com/l/kevhup](https://mikrozaar.gumroad.com/l/kevhup)
 - **Interactive Web Hub:** [https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/](https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/)
 - **Official n8n Community Showcase & Discussion:** [https://community.n8n.io/t/i-open-sourced-8-ready-to-import-n8n-workflows-for-b2b-lead-scraping-shopify-stores-skool-mrr-yc-founders-ats-tech-stacks-1-star-saas-churn/328374](https://community.n8n.io/t/i-open-sourced-8-ready-to-import-n8n-workflows-for-b2b-lead-scraping-shopify-stores-skool-mrr-yc-founders-ats-tech-stacks-1-star-saas-churn/328374)
 - **DEV.to Engineering Deep-Dive Article (#1):** [https://dev.to/storeintel/open-sourced-8-browserless-b2b-lead-e-commerce-scrapers-for-clay-n8n-make-4-free-csv-3l3j](https://dev.to/storeintel/open-sourced-8-browserless-b2b-lead-e-commerce-scrapers-for-clay-n8n-make-4-free-csv-3l3j)
