@@ -8,241 +8,485 @@
   <link rel="canonical" href="https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/samples.html" />
   <style>
     :root {
-      --bg: #0b0f19;
-      --card: #131b2e;
-      --border: #23304d;
-      --accent: #38bdf8;
-      --accent-green: #10b981;
-      --accent-amber: #f59e0b;
-      --text: #f1f5f9;
-      --muted: #94a3b8;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --border-strong: #cbd5e1;
+      --primary: #0f172a;
+      --blue: #2563eb;
+      --blue-hover: #1d4ed8;
+      --emerald: #059669;
+      --emerald-bg: #ecfdf5;
+      --text: #0f172a;
+      --muted: #475569;
+      --subtle: #64748b;
     }
     * { box-sizing: border-box; }
-    body {
+    html, body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      padding: 0;
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
     }
     header {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 48px 24px 28px;
-      text-align: center;
+      background: #ffffff;
       border-bottom: 1px solid var(--border);
+      padding: 40px 24px 32px;
+      text-align: center;
     }
-    h1 { font-size: 2.1rem; margin: 0 0 12px; }
-    .subtitle { color: var(--muted); max-width: 860px; margin: 0 auto 24px; }
-    .top-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .container { max-width: 1200px; margin: 32px auto 80px; padding: 0 24px; display: grid; gap: 36px; }
-    .packs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 18px;
-      margin-top: 14px;
+    .header-inner {
+      max-width: 1140px;
+      margin: 0 auto;
     }
-    .pack-card {
-      background: #0d1424;
+    .eyebrow {
+      display: inline-block;
+      background: #eff6ff;
+      color: var(--blue);
+      border: 1px solid #bfdbfe;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      letter-spacing: 0.01em;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin: 0 0 12px;
+      color: var(--text);
+    }
+    .subtitle {
+      color: var(--muted);
+      max-width: 780px;
+      margin: 0 auto 24px;
+      font-size: 1rem;
+    }
+    .top-links {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .container {
+      max-width: 1180px;
+      width: 100%;
+      margin: 28px auto 72px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .section-card {
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: 12px;
+      padding: 24px;
+      width: 100%;
+      min-width: 0;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+    }
+    .packs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
+    .pack-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
       padding: 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      min-width: 0;
     }
     .pack-card.featured {
-      border-color: var(--accent-green);
-      box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.25);
+      background: #ffffff;
+      border: 2px solid var(--blue);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+    }
+    .pack-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      background: #dbeafe;
+      color: var(--blue);
     }
     .pack-price {
-      font-size: 1.65rem;
+      font-size: 1.55rem;
       font-weight: 800;
-      color: var(--accent-green);
+      color: var(--text);
       margin: 6px 0 10px;
     }
     .pack-list {
       margin: 0 0 18px;
       padding-left: 18px;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
     .pack-list li { margin-bottom: 6px; }
-    .section-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 26px;
-    }
     .section-head {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
-    h2 { margin: 0; font-size: 1.35rem; }
-    .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    h2 {
+      margin: 0;
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+    .btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 9px 15px;
       border-radius: 8px;
       font-weight: 600;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       text-decoration: none;
-      text-align: center;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.15s ease;
     }
-    .btn-primary { background: var(--accent); color: #090d16; }
-    .btn-green { background: var(--accent-green); color: #090d16; }
-    .btn-amber { background: var(--accent-amber); color: #090d16; }
-    .btn-secondary { background: #1e293b; color: var(--text); border: 1px solid var(--border); }
+    .btn-primary { background: var(--blue); color: #ffffff; }
+    .btn-primary:hover { background: var(--blue-hover); }
+    .btn-dark { background: var(--primary); color: #ffffff; }
+    .btn-dark:hover { background: #1e293b; }
+    .btn-outline {
+      background: #ffffff;
+      color: var(--text);
+      border: 1px solid var(--border-strong);
+    }
+    .btn-outline:hover { background: #f1f5f9; }
     .table-wrap {
+      width: 100%;
+      max-width: 100%;
       overflow-x: auto;
       border: 1px solid var(--border);
-      border-radius: 10px;
-      background: #090d16;
+      border-radius: 8px;
+      background: #ffffff;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.83rem;
+      font-size: 0.82rem;
       text-align: left;
     }
     th, td {
-      padding: 10px 12px;
+      padding: 9px 12px;
       border-bottom: 1px solid var(--border);
       white-space: nowrap;
+      max-width: 260px;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    th { background: #101726; color: var(--accent); font-weight: 600; }
-    td a { color: var(--accent-green); text-decoration: none; font-weight: 600; }
-    footer { text-align: center; padding: 32px; color: var(--muted); border-top: 1px solid var(--border); }
-    footer a { color: var(--accent); }
+    th {
+      background: #f8fafc;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f8fafc; }
+    .num-cell { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--emerald); }
+    .table-link {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .table-link:hover { text-decoration: underline; }
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      color: var(--subtle);
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+      font-size: 0.88rem;
+    }
+    footer a { color: var(--blue); text-decoration: none; font-weight: 500; }
+
+    /* Modal Styles */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(2px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 9999;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      max-width: 480px;
+      width: 100%;
+      padding: 26px;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
+    }
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+    .modal-title { font-size: 1.15rem; font-weight: 700; margin: 0; }
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: var(--subtle);
+      padding: 0 4px;
+    }
+    .form-field { margin-bottom: 14px; }
+    .form-field label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 5px;
+    }
+    .form-field input, .form-field select, .form-field textarea {
+      width: 100%;
+      padding: 9px 11px;
+      border: 1px solid var(--border-strong);
+      border-radius: 7px;
+      font-size: 0.88rem;
+      font-family: inherit;
+    }
+    .modal-status {
+      display: none;
+      padding: 12px;
+      border-radius: 8px;
+      background: var(--emerald-bg);
+      color: var(--emerald);
+      font-size: 0.86rem;
+      font-weight: 600;
+      margin-top: 12px;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>5 Live B2B Lead Sample Datasets (246 Verified Rows — Free CSV)</h1>
-    <p class="subtitle">
-      Explore real, unedited B2B lead datasets extracted in seconds by <strong>StoreIntel Labs</strong> browserless HTTP scrapers.
-      Download the sample CSVs for free, run the live Apify Actors yourself, or order full pre-scraped CSV bundles below.
-    </p>
-    <div class="top-links">
-      <a class="btn btn-primary" href="index.html">&larr; Back to All 32 Scrapers Hub</a>
-      <a class="btn btn-green" href="https://app.clay.com/shared-workbook/share_0toe8fdqHgFAJtmU6wQ" target="_blank" rel="noopener">Open 1-Click Clay.com Workbook</a>
-      <a class="btn btn-secondary" href="https://apify.com/storeintel" target="_blank" rel="noopener">StoreIntel on Apify Store</a>
+    <div class="header-inner">
+      <span class="eyebrow">StoreIntel Labs &middot; Open B2B Data Explorer</span>
+      <h1>5 Live B2B Lead Sample Datasets (246 Verified Rows)</h1>
+      <p class="subtitle">
+        Explore real, unedited B2B lead datasets extracted by <strong>StoreIntel Labs</strong> browserless HTTP scrapers.
+        Download the sample CSVs for free, run the scrapers live on Apify Store, or request a turnkey custom extraction.
+      </p>
+      <div class="top-links">
+        <a class="btn btn-outline" href="index.html">&larr; All 32 Scrapers &amp; Workflows</a>
+        <a class="btn btn-primary" href="https://app.clay.com/shared-workbook/share_0toe8fdqHgFAJtmU6wQ" target="_blank" rel="noopener">Open 1-Click Clay.com Template</a>
+        <a class="btn btn-dark" href="https://apify.com/storeintel" target="_blank" rel="noopener">Run Live on Apify Store &nearr;</a>
+      </div>
     </div>
   </header>
 
   <main class="container">
     <section class="section-card" id="commercial-packs">
       <div class="section-head">
-        <h2>⚡ Need More Than a Sample? Choose How You Scale</h2>
+        <h2>How to Access Full Datasets &amp; Automated Enrichment</h2>
       </div>
       <div class="packs-grid">
-        <div class="pack-card">
-          <div>
-            <h3 style="margin:0 0 4px;">1. Self-Serve Apify API</h3>
-            <div class="pack-price">$0.90 – $3.00 <span style="font-size:0.85rem;color:var(--muted);font-weight:500;">/ 1,000 leads</span></div>
-            <ul class="pack-list">
-              <li>Run all 8 browserless Actors &amp; 24 Tasks directly on Apify Store</li>
-              <li>Native integration with Clay.com, n8n, and Make.com</li>
-              <li>Zero proxy configuration or browser overhead</li>
-            </ul>
-          </div>
-          <a class="btn btn-primary" href="https://apify.com/storeintel" target="_blank" rel="noopener">Launch on Apify Store &rarr;</a>
-        </div>
-
         <div class="pack-card featured">
           <div>
-            <h3 style="margin:0 0 4px;">2. Full Pre-Scraped CSV Bundle</h3>
-            <div class="pack-price">$49 <span style="font-size:0.85rem;color:var(--muted);font-weight:500;">one-time download</span></div>
+            <span class="pack-badge">100% Automated &middot; Instant CSV/JSON</span>
+            <h3 style="margin:0 0 4px;font-size:1.05rem;">1. Self-Serve on Apify Store</h3>
+            <div class="pack-price">$0.90 – $3.00 <span style="font-size:0.82rem;color:var(--muted);font-weight:500;">/ 1,000 leads</span></div>
             <ul class="pack-list">
-              <li><strong>5,000+</strong> Stripe-Verified SaaS Startups &amp; Founders (MRR + Emails + X)</li>
-              <li><strong>5,000+</strong> High-MRR Skool Communities &amp; Creator Socials</li>
-              <li><strong>4,500+</strong> Y Combinator Founders (Direct LinkedIn &amp; X URLs)</li>
-              <li><strong>10,000+</strong> Shopify D2C Stores + 1-Star Competitor Churn Leads</li>
+              <li>Run all 8 browserless Actors &amp; 24 Tasks on demand</li>
+              <li>Instant Stripe/Card checkout &amp; automatic CSV/Excel/JSON export handled by Apify</li>
+              <li>Native integration with Clay.com, n8n, and Make.com</li>
             </ul>
           </div>
-          <a class="btn btn-green" href="mailto:mikrozar@gmail.com?subject=%5BStoreIntel%20Data%20Pack%5D%20Full%2025k%2B%20B2B%20Lead%20CSV%20Bundle%20(%2449)&amp;body=Hi%20StoreIntel%20Labs%2C%0A%0AI'd%20like%20to%20get%20the%20Full%20Pre-Scraped%20B2B%20CSV%20Bundle%20(%2449%20one-time).%20Please%20send%20the%20payment%20link%20and%20download%20access.%0A%0AMy%20target%20niche%20%2F%20company%3A%20">Order Full 25,000+ Lead Bundle ($49) &rarr;</a>
+          <a class="btn btn-primary" href="https://apify.com/storeintel" target="_blank" rel="noopener">Launch Scrapers on Apify Store &rarr;</a>
         </div>
 
         <div class="pack-card">
           <div>
-            <h3 style="margin:0 0 4px;">3. Custom Turnkey Lead Extraction</h3>
-            <div class="pack-price">$99 <span style="font-size:0.85rem;color:var(--muted);font-weight:500;">custom B2B delivery</span></div>
+            <span class="pack-badge" style="background:#f1f5f9;color:#334155;">No Code / API Needed</span>
+            <h3 style="margin:0 0 4px;font-size:1.05rem;">2. Pre-Scraped B2B Data Bundle</h3>
+            <div class="pack-price">$49 <span style="font-size:0.82rem;color:var(--muted);font-weight:500;">one-time pack</span></div>
+            <ul class="pack-list">
+              <li><strong>Stripe-Verified SaaS Startups</strong> (MRR, 30d Revenue, Founder X &amp; Emails)</li>
+              <li><strong>High-MRR Skool Communities</strong> &amp; Creator Socials</li>
+              <li><strong>Y Combinator Founders</strong> (Direct LinkedIn &amp; X URLs)</li>
+              <li><strong>Shopify &amp; WP 1-Star Churn Leads</strong> + ATS Tech Stack Signals</li>
+            </ul>
+          </div>
+          <button type="button" class="btn btn-dark" onclick="openOrderModal('Full Pre-Scraped CSV Bundle ($49)')">Request Full CSV Bundle ($49) &rarr;</button>
+        </div>
+
+        <div class="pack-card">
+          <div>
+            <span class="pack-badge" style="background:#f1f5f9;color:#334155;">Done-For-You Service</span>
+            <h3 style="margin:0 0 4px;font-size:1.05rem;">3. Custom ICP Lead Extraction</h3>
+            <div class="pack-price">$99 <span style="font-size:0.82rem;color:var(--muted);font-weight:500;">custom B2B delivery</span></div>
             <ul class="pack-list">
               <li>Tell us your exact ICP (tech stack, competitor apps, geo, MRR range)</li>
               <li>We run the full extraction, clean &amp; deduplicate emails/socials</li>
               <li>Delivered as ready-to-import CSV for Instantly, Smartlead, or Clay within 24h</li>
             </ul>
           </div>
-          <a class="btn btn-amber" href="mailto:mikrozar@gmail.com?subject=%5BStoreIntel%20Custom%20Scrape%5D%20Custom%20B2B%20Lead%20Extraction%20(%2499)&amp;body=Hi%20StoreIntel%20Labs%2C%0A%0AI'd%20like%20to%20order%20a%20custom%20B2B%20lead%20dataset%20(%2499).%20Here%20is%20my%20target%20ICP%20%2F%20websites%3A%0A">Request Custom ICP Extraction &rarr;</a>
+          <button type="button" class="btn btn-outline" onclick="openOrderModal('Custom Turnkey ICP Extraction ($99)')">Order Custom ICP Scrape ($99) &rarr;</button>
         </div>
       </div>
     </section>
 
     <section class="section-card" id="verified-saas-sample">
       <div class="section-head">
-        <h2>1. Stripe-Verified SaaS Startups: Exact 30d Revenue, MRR, Founder X &amp; Contact Emails (60 Rows)</h2>
+        <h2>1. Stripe-Verified SaaS Startups: 30d Revenue, MRR, Founder X &amp; Contact Emails (60 Rows)</h2>
         <div class="btn-row">
-          <a class="btn btn-green" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/05_stripe_verified_saas_startups_mrr_and_founders.csv" download>Download Free 60-Row CSV</a>
-          <a class="btn btn-primary" href="https://apify.com/storeintel" target="_blank" rel="noopener">Explore StoreIntel Scrapers &rarr;</a>
+          <a class="btn btn-outline" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/05_stripe_verified_saas_startups_mrr_and_founders.csv" download>Download Free CSV (60 Rows)</a>
+          <a class="btn btn-primary" href="https://apify.com/storeintel" target="_blank" rel="noopener">Run Live on Apify &rarr;</a>
         </div>
       </div>
-      <div class="table-wrap"><table><thead><tr><th>SaaS Startup</th><th>30d Revenue ($)</th><th>Verified MRR ($)</th><th>Founder</th><th>Founder X</th><th>Contact Email</th><th>LinkedIn</th><th>Category</th><th>Website</th></tr></thead><tbody><tr><td>Gumroad</td><td>7143938.0</td><td>0.0</td><td>Sahil Lavingia</td><td><a href="https://x.com/shl" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@gumroad.com</td><td></td><td>E-comm</td><td><a href="https://gumroad.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Pastel</td><td>4001109.0</td><td>0.0</td><td></td><td></td><td>hello@heypastel.com</td><td><a href="https://www.linkedin.com/company/heypastel" target="_blank" rel="noopener">Link &nearr;</a></td><td>Sales, AI, Productivity, Marketing, SaaS</td><td><a href="https://heypastel.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Stan</td><td>2844652.0</td><td>3569654.0</td><td>Vitalii Dodonov</td><td><a href="https://x.com/vitaliidodonov" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@stan.store</td><td></td><td>Content Creation</td><td><a href="https://stan.store/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>easytools</td><td>2703570.0</td><td>0.0</td><td>Greg</td><td><a href="https://x.com/greg_rog" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@easycart.pl</td><td><a href="https://www.linkedin.com/in/grzegorzrog" target="_blank" rel="noopener">Link &nearr;</a></td><td>E-comm</td><td><a href="https://easycart.pl/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>ARNTREAL</td><td>1132377.0</td><td>0.0</td><td></td><td></td><td>hello@arntreal.com</td><td></td><td>E-comm</td><td><a href="https://arntreal.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Comp AI</td><td>1001530.0</td><td>17383.0</td><td>Lewis ⚡ soc2/acc</td><td><a href="https://x.com/lewiscarhart" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@trycomp.ai</td><td><a href="https://www.linkedin.com/company/trycompai" target="_blank" rel="noopener">Link &nearr;</a></td><td>AI, SaaS, Security, Dev Tools</td><td><a href="https://trycomp.ai/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Stack Influence</td><td>874961.0</td><td>28342.0</td><td>Laurent Vincent</td><td><a href="https://x.com/laurent_vinc" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@stackinfluence.com</td><td><a href="https://www.linkedin.com/company/stack-influence" target="_blank" rel="noopener">Link &nearr;</a></td><td>Marketing, Social Media, E-comm, Content Creation</td><td><a href="https://stackinfluence.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Brand On Demand, Inc.</td><td>825366.0</td><td>177559.0</td><td>Martins Lasmanis</td><td><a href="https://x.com/martinlasmanis" target="_blank" rel="noopener">Link &nearr;</a></td><td>help@supliful.com</td><td><a href="https://www.linkedin.com/company/supliful" target="_blank" rel="noopener">Link &nearr;</a></td><td>E-comm, SaaS, Content Creation, Marketing, Health &amp; Fitness</td><td><a href="http://supliful.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>MyPlots</td><td>662794.0</td><td>0.02</td><td>Clark</td><td><a href="https://x.com/itsclarkholden" target="_blank" rel="noopener">Link &nearr;</a></td><td>support@myplots.com</td><td></td><td>SaaS, Marketplace, Entertainment, Mobile Apps</td><td><a href="https://myplots.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>1Lookup</td><td>520382.0</td><td>251606.0</td><td>Robby Frank</td><td><a href="https://x.com/robbyfrank" target="_blank" rel="noopener">Link &nearr;</a></td><td>info@1lookup.io</td><td><a href="https://linkedin.com/company/1lookup" target="_blank" rel="noopener">Link &nearr;</a></td><td>SaaS, Dev Tools, Analytics, Security, Sales</td><td><a href="https://www.1lookup.io/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Postiz</td><td>448301.0</td><td>408836.0</td><td>Nevo David</td><td><a href="https://x.com/wickedguro" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@postiz.com</td><td><a href="https://www.linkedin.com/company/postiz" target="_blank" rel="noopener">Link &nearr;</a></td><td>Social Media, AI, Content Creation, SaaS, Marketing</td><td><a href="https://postiz.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>GojiberryAI</td><td>407199.0</td><td>424368.0</td><td>Romàn</td><td><a href="https://x.com/romanbuildsaas" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@gojiberry.ai</td><td></td><td>AI, Sales, Marketing, SaaS, Productivity</td><td><a href="https://gojiberry.ai/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>LLM Gateway</td><td>259539.0</td><td>78764.0</td><td>LLM Gateway</td><td><a href="https://x.com/llmgateway" target="_blank" rel="noopener">Link &nearr;</a></td><td>contact@llmgateway.io</td><td></td><td>AI, Dev Tools, SaaS, Analytics</td><td><a href="https://llmgateway.io/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>HypeProxies</td><td>239377.0</td><td>0.0</td><td>Gunnar</td><td><a href="https://x.com/basedgunnar" target="_blank" rel="noopener">Link &nearr;</a></td><td>support@hypeproxies.io</td><td><a href="https://www.linkedin.com/company/hypeproxies" target="_blank" rel="noopener">Link &nearr;</a></td><td>Security, Dev Tools, SaaS, Utilities</td><td><a href="https://hypeproxies.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Rezi</td><td>209517.0</td><td>238744.0</td><td>Jacob Jacquet</td><td><a href="https://x.com/jacob_jacquet" target="_blank" rel="noopener">Link &nearr;</a></td><td>support@rezi.io</td><td><a href="https://www.linkedin.com/company/reziresume" target="_blank" rel="noopener">Link &nearr;</a></td><td>AI, Productivity, SaaS, Recruiting &amp; HR, Content Creation</td><td><a href="https://www.rezi.ai/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Cometly</td><td>202347.0</td><td>196525.0</td><td>Grant Cooper</td><td><a href="https://x.com/heygrantcooper" target="_blank" rel="noopener">Link &nearr;</a></td><td>support@cometly.com</td><td><a href="https://www.linkedin.com/company/cometly" target="_blank" rel="noopener">Link &nearr;</a></td><td>Analytics, AI, Marketing, SaaS</td><td><a href="https://www.cometly.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Kibu</td><td>200210.0</td><td>234319.0</td><td>Daniel Caridi</td><td><a href="https://x.com/ddcaridi" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@kibu.com</td><td><a href="https://www.linkedin.com/company/kibuhq" target="_blank" rel="noopener">Link &nearr;</a></td><td>Education, SaaS, Health &amp; Fitness, Productivity, AI</td><td><a href="https://kibu.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Saikyo, LLC</td><td>197658.0</td><td>0.0</td><td>Turan Selvi</td><td><a href="https://x.com/turanselvi" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@clipster.gg</td><td><a href="https://www.linkedin.com/company/clipster" target="_blank" rel="noopener">Link &nearr;</a></td><td>Content Creation, Marketing, Social Media, Analytics</td><td><a href="https://clipster.gg/" target="_blank" rel="noopener">Link &nearr;</a></td></tr></tbody></table></div>
+      <div class="table-wrap"><table><thead><tr><th>SaaS Startup</th><th>30d Revenue</th><th>Verified MRR</th><th>Founder</th><th>Founder X</th><th>Contact Email</th><th>LinkedIn</th><th>Category</th><th>Website</th></tr></thead><tbody><tr><td>Gumroad</td><td class="num-cell">$7,143,938</td><td class="num-cell">$0</td><td>Sahil Lavingia</td><td><a class="table-link" href="https://x.com/shl" target="_blank" rel="noopener">Open &nearr;</a></td><td>hello@gumroad.com</td><td></td><td>E-comm</td><td><a class="table-link" href="https://gumroad.com/" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Pastel</td><td class="num-cell">$4,001,109</td><td class="num-cell">$0</td><td></td><td></td><td>hello@heypastel.com</td><td><a class="table-link" href="https://www.linkedin.com/company/heypastel" target="_blank" rel="noopener">Open &nearr;</a></td><td>Sales, AI, Productivity, Marketing, SaaS</td><td><a class="table-link" href="https://heypastel.com/" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Stan</td><td class="num-cell">$2,844,652</td><td class="num-cell">$3,569,654</td><td>Vitalii Dodonov</td><td><a class="table-link" href="https://x.com/vitaliidodonov" target="_blank" rel="noopener">Open &nearr;</a></td><td>hello@stan.store</td><td></td><td>Content Creation</td><td><a class="table-link" href="https://stan.store/" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>easytools</td><td class="num-cell">$2,703,570</td><td class="num-cell">$0</td><td>Greg</td><td><a class="table-link" href="https://x.com/greg_rog" target="_blank" rel="noopener">Open &nearr;</a></td><td>hello@easycart.pl</td><td><a class="table-link" href="https://www.linkedin.com/in/grzegorzrog" target="_blank" rel="noopener">Open &nearr;</a></td><td>E-comm</td><td><a class="table-link" href="https://easycart.pl/" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>ARNTREAL</td><td class="num-cell">$1,132,377</td><td class="num-cell">$0</td><td></td><td></td><td>hello@arntreal.com</td><td></td><td>E-comm</td><td><a class="table-link" href="https://arntreal.com/" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Comp AI</td><td class="num-cell">$1,001,530</td><td class="num-cell">$17,383</td><td>Lewis ⚡ soc2/acc</td><td><a class="table-link" href="https://x.com/lewiscarhart" target="_blank" rel="noopener">Open &nearr;</a></td><td>hello@trycomp.ai</td><td><a class="table-link" href="https://www.linkedin.com/company/trycompai" target="_blank" rel="noopener">Open &nearr;</a></td><td>AI, SaaS, Security, Dev Tools</td><td><a class="table-link" href="https://trycomp.ai/" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Stack Influence</td><td class="num-cell">$874,961</td><td class="num-cell">$28,342</td><td>Laurent Vincent</td><td><a class="table-link" href="https://x.com/laurent_vinc" target="_blank" rel="noopener">Open &nearr;</a></td><td>hello@stackinfluence.com</td><td><a class="table-link" href="https://www.linkedin.com/company/stack-influence" target="_blank" rel="noopener">Open &nearr;</a></td><td>Marketing, Social Media, E-comm, Content Creation</td><td><a class="table-link" href="https://stackinfluence.com/" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Brand On Demand, Inc.</td><td class="num-cell">$825,366</td><td class="num-cell">$177,559</td><td>Martins Lasmanis</td><td><a class="table-link" href="https://x.com/martinlasmanis" target="_blank" rel="noopener">Open &nearr;</a></td><td>help@supliful.com</td><td><a class="table-link" href="https://www.linkedin.com/company/supliful" target="_blank" rel="noopener">Open &nearr;</a></td><td>E-comm, SaaS, Content Creation, Marketing, Health &amp; Fitness</td><td><a class="table-link" href="http://supliful.com/" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>MyPlots</td><td class="num-cell">$662,794</td><td class="num-cell">$0</td><td>Clark</td><td><a class="table-link" href="https://x.com/itsclarkholden" target="_blank" rel="noopener">Open &nearr;</a></td><td>support@myplots.com</td><td></td><td>SaaS, Marketplace, Entertainment, Mobile Apps</td><td><a class="table-link" href="https://myplots.com/" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>1Lookup</td><td class="num-cell">$520,382</td><td class="num-cell">$251,606</td><td>Robby Frank</td><td><a class="table-link" href="https://x.com/robbyfrank" target="_blank" rel="noopener">Open &nearr;</a></td><td>info@1lookup.io</td><td><a class="table-link" href="https://linkedin.com/company/1lookup" target="_blank" rel="noopener">Open &nearr;</a></td><td>SaaS, Dev Tools, Analytics, Security, Sales</td><td><a class="table-link" href="https://www.1lookup.io/" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Postiz</td><td class="num-cell">$448,301</td><td class="num-cell">$408,836</td><td>Nevo David</td><td><a class="table-link" href="https://x.com/wickedguro" target="_blank" rel="noopener">Open &nearr;</a></td><td>hello@postiz.com</td><td><a class="table-link" href="https://www.linkedin.com/company/postiz" target="_blank" rel="noopener">Open &nearr;</a></td><td>Social Media, AI, Content Creation, SaaS, Marketing</td><td><a class="table-link" href="https://postiz.com/" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>GojiberryAI</td><td class="num-cell">$407,199</td><td class="num-cell">$424,368</td><td>Romàn</td><td><a class="table-link" href="https://x.com/romanbuildsaas" target="_blank" rel="noopener">Open &nearr;</a></td><td>hello@gojiberry.ai</td><td></td><td>AI, Sales, Marketing, SaaS, Productivity</td><td><a class="table-link" href="https://gojiberry.ai/" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>LLM Gateway</td><td class="num-cell">$259,539</td><td class="num-cell">$78,764</td><td>LLM Gateway</td><td><a class="table-link" href="https://x.com/llmgateway" target="_blank" rel="noopener">Open &nearr;</a></td><td>contact@llmgateway.io</td><td></td><td>AI, Dev Tools, SaaS, Analytics</td><td><a class="table-link" href="https://llmgateway.io/" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>HypeProxies</td><td class="num-cell">$239,377</td><td class="num-cell">$0</td><td>Gunnar</td><td><a class="table-link" href="https://x.com/basedgunnar" target="_blank" rel="noopener">Open &nearr;</a></td><td>support@hypeproxies.io</td><td><a class="table-link" href="https://www.linkedin.com/company/hypeproxies" target="_blank" rel="noopener">Open &nearr;</a></td><td>Security, Dev Tools, SaaS, Utilities</td><td><a class="table-link" href="https://hypeproxies.com/" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Rezi</td><td class="num-cell">$209,517</td><td class="num-cell">$238,744</td><td>Jacob Jacquet</td><td><a class="table-link" href="https://x.com/jacob_jacquet" target="_blank" rel="noopener">Open &nearr;</a></td><td>support@rezi.io</td><td><a class="table-link" href="https://www.linkedin.com/company/reziresume" target="_blank" rel="noopener">Open &nearr;</a></td><td>AI, Productivity, SaaS, Recruiting &amp; HR, Content Creation</td><td><a class="table-link" href="https://www.rezi.ai/" target="_blank" rel="noopener">Open &nearr;</a></td></tr></tbody></table></div>
     </section>
 
     <section class="section-card" id="skool-sample">
       <div class="section-head">
         <h2>2. High-MRR Skool Communities &amp; Creator Social Leads Sample (45 Rows)</h2>
         <div class="btn-row">
-          <a class="btn btn-green" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/01_skool_communities_mrr_and_creator_leads.csv" download>Download Free 45-Row CSV</a>
-          <a class="btn btn-primary" href="https://apify.com/storeintel/skool-community-creator-leads-scraper" target="_blank" rel="noopener">Scrape Custom Niches on Apify &rarr;</a>
+          <a class="btn btn-outline" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/01_skool_communities_mrr_and_creator_leads.csv" download>Download Free CSV (45 Rows)</a>
+          <a class="btn btn-primary" href="https://apify.com/storeintel/skool-community-creator-leads-scraper" target="_blank" rel="noopener">Run Skool Scraper on Apify &rarr;</a>
         </div>
       </div>
-      <div class="table-wrap"><table><thead><tr><th>Community Name</th><th>Members</th><th>Price ($/mo)</th><th>Est. MRR ($/mo)</th><th>Affiliate %</th><th>Creator</th><th>Instagram</th><th>YouTube</th><th>Skool URL</th></tr></thead><tbody><tr><td>Base44 Masterclass+</td><td>1336</td><td>499.0</td><td>666664.0</td><td></td><td>Mikey No Code</td><td></td><td><a href="https://www.youtube.com/@mikeynocode/videos" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.skool.com/mikey-no-code-8204" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Daily Mentor Academy</td><td>582</td><td>666.67</td><td>388001.94</td><td></td><td>David Fogarty</td><td><a href="http://instagram.com/daviefogarty" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="http://youtube.com/daviefogarty" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.skool.com/daily-mentor-academy" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Agentic AI for Founders</td><td>3625</td><td>97.0</td><td>351625.0</td><td>40</td><td>Luke Cutting</td><td><a href="https://www.instagram.com/lukebuildsai/" target="_blank" rel="noopener">Link &nearr;</a></td><td></td><td><a href="https://www.skool.com/agentic-ai-for-founders" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>AI Automations by Jack</td><td>3499</td><td>97.0</td><td>339403.0</td><td>20</td><td>Jack Roberts</td><td><a href="https://www.instagram.com/jackroberts___/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.youtube.com/@Itssssss_Jack" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.skool.com/aiautomationsbyjack" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>AI Video Bootcamp</td><td>30626</td><td>9.0</td><td>275634.0</td><td>50</td><td>Daniel Riley</td><td></td><td></td><td><a href="https://www.skool.com/aivideobootcamp" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>CEO Lab (Marketer School)</td><td>1211</td><td>197.0</td><td>238567.0</td><td>40</td><td>Jeff Lopez</td><td><a href="https://www.instagram.com/themrrguy" target="_blank" rel="noopener">Link &nearr;</a></td><td></td><td><a href="https://www.skool.com/marketers" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Sales Training &amp; Placement </td><td>7990</td><td>27.0</td><td>215730.0</td><td>50</td><td>Robb Quinn</td><td><a href="https://www.instagram.com/officialrobbquinn/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.youtube.com/@RobbQuinn" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.skool.com/thesalesagency" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Origins Ecommerce</td><td>1934</td><td>98.0</td><td>189532.0</td><td>50</td><td>Spencer Pawliw</td><td><a href="https://www.instagram.com/evolve_ecommerce/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.youtube.com/@spencerpawliw" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.skool.com/origins" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>AI Money Hub</td><td>3078</td><td>49.0</td><td>150822.0</td><td>50</td><td>Lindsay Gonzales</td><td><a href="https://www.instagram.com/stories/lindsay.ai/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.youtube.com/@AutomateAIConsulting" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.skool.com/ai-money-hub" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Local AI Agency Accelerator</td><td>4792</td><td>27.0</td><td>129384.0</td><td>40</td><td>Jonathan Montoya</td><td><a href="https://www.instagram.com/jonathan_montoya24/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.youtube.com/@Passiveincomelifestyles" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.skool.com/aiagency" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Agentic AI Academy</td><td>1282</td><td>97.0</td><td>124354.0</td><td>30</td><td>Taki Wong</td><td><a href="https://www.instagram.com/taki.gpt/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.youtube.com/@takigpt" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.skool.com/agenticaiacademy" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Ad Creators Lab</td><td>1185</td><td>99.0</td><td>117315.0</td><td>50</td><td>Camilo Castañeda</td><td><a href="https://www.instagram.com/adswithcami" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.youtube.com/@adswithcami" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.skool.com/adcreatorslab" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Matt Ryder F The GuRUs: Sales</td><td>1685</td><td>69.0</td><td>116265.0</td><td>30</td><td>Matt Ryder</td><td><a href="https://www.instagram.com/realmattryder/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.youtube.com/@MatthewRyder" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.skool.com/mattryder" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Claude for Closers</td><td>2331</td><td>47.0</td><td>109557.0</td><td>50</td><td>Javan Zhang</td><td></td><td></td><td><a href="https://www.skool.com/salestraining" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Email Marketing Mastery</td><td>422</td><td>247.0</td><td>104234.0</td><td>40</td><td>Max Sturtevant</td><td><a href="https://www.instagram.com/wellcopymax/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.youtube.com/channel/UCEM2sO7E5KSMIqonVgb98ug" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.skool.com/email-marketerz" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Grow With Evelyn</td><td>3512</td><td>29.0</td><td>101848.0</td><td>50</td><td>Evelyn Weiss</td><td><a href="https://www.instagram.com/growwithevelyn/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://youtube.com/@growwithevelyn?si=s1W5eQNckjjE8VcU" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.skool.com/evelyn" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>One Call Close</td><td>622</td><td>127.0</td><td>78994.0</td><td>30</td><td>Balint Adorjan</td><td></td><td></td><td><a href="https://www.skool.com/onecall" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Learn with LaunchPad </td><td>813</td><td>97.0</td><td>78861.0</td><td>40</td><td>Amber King</td><td></td><td></td><td><a href="https://www.skool.com/learn-with-launchpad" target="_blank" rel="noopener">Link &nearr;</a></td></tr></tbody></table></div>
+      <div class="table-wrap"><table><thead><tr><th>Community Name</th><th>Members</th><th>Price/mo</th><th>Est. MRR</th><th>Affiliate %</th><th>Creator</th><th>Instagram</th><th>YouTube</th><th>Skool URL</th></tr></thead><tbody><tr><td>Base44 Masterclass+</td><td>1336</td><td class="num-cell">$499</td><td class="num-cell">$666,664</td><td></td><td>Mikey No Code</td><td></td><td><a class="table-link" href="https://www.youtube.com/@mikeynocode/videos" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.skool.com/mikey-no-code-8204" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Daily Mentor Academy</td><td>582</td><td class="num-cell">$667</td><td class="num-cell">$388,002</td><td></td><td>David Fogarty</td><td><a class="table-link" href="http://instagram.com/daviefogarty" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="http://youtube.com/daviefogarty" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.skool.com/daily-mentor-academy" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Agentic AI for Founders</td><td>3625</td><td class="num-cell">$97</td><td class="num-cell">$351,625</td><td>40</td><td>Luke Cutting</td><td><a class="table-link" href="https://www.instagram.com/lukebuildsai/" target="_blank" rel="noopener">Open &nearr;</a></td><td></td><td><a class="table-link" href="https://www.skool.com/agentic-ai-for-founders" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>AI Automations by Jack</td><td>3499</td><td class="num-cell">$97</td><td class="num-cell">$339,403</td><td>20</td><td>Jack Roberts</td><td><a class="table-link" href="https://www.instagram.com/jackroberts___/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.youtube.com/@Itssssss_Jack" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.skool.com/aiautomationsbyjack" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>AI Video Bootcamp</td><td>30626</td><td class="num-cell">$9</td><td class="num-cell">$275,634</td><td>50</td><td>Daniel Riley</td><td></td><td></td><td><a class="table-link" href="https://www.skool.com/aivideobootcamp" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>CEO Lab (Marketer School)</td><td>1211</td><td class="num-cell">$197</td><td class="num-cell">$238,567</td><td>40</td><td>Jeff Lopez</td><td><a class="table-link" href="https://www.instagram.com/themrrguy" target="_blank" rel="noopener">Open &nearr;</a></td><td></td><td><a class="table-link" href="https://www.skool.com/marketers" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Sales Training &amp; Placement </td><td>7990</td><td class="num-cell">$27</td><td class="num-cell">$215,730</td><td>50</td><td>Robb Quinn</td><td><a class="table-link" href="https://www.instagram.com/officialrobbquinn/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.youtube.com/@RobbQuinn" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.skool.com/thesalesagency" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Origins Ecommerce</td><td>1934</td><td class="num-cell">$98</td><td class="num-cell">$189,532</td><td>50</td><td>Spencer Pawliw</td><td><a class="table-link" href="https://www.instagram.com/evolve_ecommerce/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.youtube.com/@spencerpawliw" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.skool.com/origins" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>AI Money Hub</td><td>3078</td><td class="num-cell">$49</td><td class="num-cell">$150,822</td><td>50</td><td>Lindsay Gonzales</td><td><a class="table-link" href="https://www.instagram.com/stories/lindsay.ai/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.youtube.com/@AutomateAIConsulting" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.skool.com/ai-money-hub" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Local AI Agency Accelerator</td><td>4792</td><td class="num-cell">$27</td><td class="num-cell">$129,384</td><td>40</td><td>Jonathan Montoya</td><td><a class="table-link" href="https://www.instagram.com/jonathan_montoya24/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.youtube.com/@Passiveincomelifestyles" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.skool.com/aiagency" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Agentic AI Academy</td><td>1282</td><td class="num-cell">$97</td><td class="num-cell">$124,354</td><td>30</td><td>Taki Wong</td><td><a class="table-link" href="https://www.instagram.com/taki.gpt/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.youtube.com/@takigpt" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.skool.com/agenticaiacademy" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Ad Creators Lab</td><td>1185</td><td class="num-cell">$99</td><td class="num-cell">$117,315</td><td>50</td><td>Camilo Castañeda</td><td><a class="table-link" href="https://www.instagram.com/adswithcami" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.youtube.com/@adswithcami" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.skool.com/adcreatorslab" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Matt Ryder F The GuRUs: Sales</td><td>1685</td><td class="num-cell">$69</td><td class="num-cell">$116,265</td><td>30</td><td>Matt Ryder</td><td><a class="table-link" href="https://www.instagram.com/realmattryder/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.youtube.com/@MatthewRyder" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.skool.com/mattryder" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Claude for Closers</td><td>2331</td><td class="num-cell">$47</td><td class="num-cell">$109,557</td><td>50</td><td>Javan Zhang</td><td></td><td></td><td><a class="table-link" href="https://www.skool.com/salestraining" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Email Marketing Mastery</td><td>422</td><td class="num-cell">$247</td><td class="num-cell">$104,234</td><td>40</td><td>Max Sturtevant</td><td><a class="table-link" href="https://www.instagram.com/wellcopymax/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.youtube.com/channel/UCEM2sO7E5KSMIqonVgb98ug" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.skool.com/email-marketerz" target="_blank" rel="noopener">Open &nearr;</a></td></tr></tbody></table></div>
     </section>
 
     <section class="section-card" id="yc-sample">
       <div class="section-head">
         <h2>3. Y Combinator Startups &amp; Founders (Direct LinkedIn &amp; X Links) Sample (45 Rows)</h2>
         <div class="btn-row">
-          <a class="btn btn-green" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/02_yc_startups_and_founders_linkedin_x_leads.csv" download>Download Free 45-Row CSV</a>
+          <a class="btn btn-outline" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/02_yc_startups_and_founders_linkedin_x_leads.csv" download>Download Free CSV (45 Rows)</a>
           <a class="btn btn-primary" href="https://apify.com/storeintel/y-combinator-startups-founders-scraper" target="_blank" rel="noopener">Run YC Scraper on Apify &rarr;</a>
         </div>
       </div>
-      <div class="table-wrap"><table><thead><tr><th>Founder Name</th><th>Role</th><th>Startup</th><th>YC Batch</th><th>Team Size</th><th>LinkedIn</th><th>X / Twitter</th><th>Website</th></tr></thead><tbody><tr><td>Paul Copplestone</td><td>Founder</td><td>Supabase</td><td>Summer 2020</td><td>120</td><td><a href="https://www.linkedin.com/in/paulcopplestone/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://twitter.com/kiwicopple" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://supabase.com" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Ant Wilson</td><td>Founder</td><td>Supabase</td><td>Summer 2020</td><td>120</td><td><a href="https://www.linkedin.com/in/anthony-wilson-46179937/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://twitter.com/antwilson" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://supabase.com" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Zeno Rocha</td><td>Founder/CEO</td><td>Resend</td><td>Winter 2023</td><td>45</td><td><a href="https://www.linkedin.com/in/zenorocha/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://x.com/zenorocha" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://resend.com" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Bu Kinoshita</td><td>Founder</td><td>Resend</td><td>Winter 2023</td><td>45</td><td><a href="https://linkedin.com/in/bkinoshita" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://twitter.com/bukinoshita" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://resend.com" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>James Hawkins</td><td>Founder</td><td>PostHog</td><td>Winter 2020</td><td>150</td><td><a href="https://www.linkedin.com/in/j-hawkins/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://x.com/james406" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://www.posthog.com" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Tim Glaser</td><td>Founder</td><td>PostHog</td><td>Winter 2020</td><td>150</td><td><a href="https://www.linkedin.com/in/timgl/" target="_blank" rel="noopener">Link &nearr;</a></td><td></td><td><a href="https://www.posthog.com" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Han Wang</td><td>Founder/CEO</td><td>Mintlify</td><td>Winter 2022</td><td>75</td><td><a href="https://www.linkedin.com/in/han-y-wang/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://x.com/handotdev" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://mintlify.com" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Hahnbee Lee</td><td>Founder</td><td>Mintlify</td><td>Winter 2022</td><td>75</td><td><a href="https://www.linkedin.com/in/hahnbee-lee/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://twitter.com/hahnbeelee" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://mintlify.com" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Marc Klingen</td><td>Founder/CEO</td><td>Langfuse</td><td>Winter 2023</td><td>26</td><td><a href="https://www.linkedin.com/in/marcklingen/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://twitter.com/marcklingen" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://langfuse.com" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Maximilian Deichmann</td><td>Founder</td><td>Langfuse</td><td>Winter 2023</td><td>26</td><td><a href="https://www.linkedin.com/in/maxdeichmann/" target="_blank" rel="noopener">Link &nearr;</a></td><td></td><td><a href="https://langfuse.com" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Clemens Rawert</td><td>Founder</td><td>Langfuse</td><td>Winter 2023</td><td>26</td><td><a href="https://www.linkedin.com/in/rawert/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://twitter.com/rawert" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://langfuse.com" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Matt Aitken</td><td>Founder</td><td>Trigger.dev</td><td>Winter 2023</td><td>17</td><td><a href="https://www.linkedin.com/in/mattaitken1985/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://twitter.com/mattaitken" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://trigger.dev" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Eric Allam</td><td>Founder</td><td>Trigger.dev</td><td>Winter 2023</td><td>17</td><td><a href="https://www.linkedin.com/in/eric-allam/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://twitter.com/maverickdotdev" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://trigger.dev" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Dan Patel</td><td>Founder</td><td>Trigger.dev</td><td>Winter 2023</td><td>17</td><td><a href="https://www.linkedin.com/in/danielkpatel/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://twitter.com/DKP__" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://trigger.dev" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>James Ritchie</td><td>Founder</td><td>Trigger.dev</td><td>Winter 2023</td><td>17</td><td><a href="https://www.linkedin.com/in/jamesritchiecv/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://twitter.com/samejr" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://trigger.dev" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Vlad Matsiiako</td><td>Founder</td><td>Infisical</td><td>Winter 2023</td><td>70</td><td><a href="https://www.linkedin.com/in/vmatsiiako/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://twitter.com/matsiiako" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://infisical.com" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Tony Dang</td><td>Founder</td><td>Infisical</td><td>Winter 2023</td><td>70</td><td><a href="https://www.linkedin.com/in/tuan-d-a104a6125/" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://twitter.com/dangtony98" target="_blank" rel="noopener">Link &nearr;</a></td><td><a href="https://infisical.com" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Maidul Islam</td><td>Founder</td><td>Infisical</td><td>Winter 2023</td><td>70</td><td><a href="https://www.linkedin.com/in/maidul98/" target="_blank" rel="noopener">Link &nearr;</a></td><td></td><td><a href="https://infisical.com" target="_blank" rel="noopener">Link &nearr;</a></td></tr></tbody></table></div>
+      <div class="table-wrap"><table><thead><tr><th>Founder Name</th><th>Role</th><th>Startup</th><th>YC Batch</th><th>Team Size</th><th>LinkedIn</th><th>X / Twitter</th><th>Website</th></tr></thead><tbody><tr><td>Paul Copplestone</td><td>Founder</td><td>Supabase</td><td>Summer 2020</td><td>120</td><td><a class="table-link" href="https://www.linkedin.com/in/paulcopplestone/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://twitter.com/kiwicopple" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://supabase.com" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Ant Wilson</td><td>Founder</td><td>Supabase</td><td>Summer 2020</td><td>120</td><td><a class="table-link" href="https://www.linkedin.com/in/anthony-wilson-46179937/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://twitter.com/antwilson" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://supabase.com" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Zeno Rocha</td><td>Founder/CEO</td><td>Resend</td><td>Winter 2023</td><td>45</td><td><a class="table-link" href="https://www.linkedin.com/in/zenorocha/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://x.com/zenorocha" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://resend.com" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Bu Kinoshita</td><td>Founder</td><td>Resend</td><td>Winter 2023</td><td>45</td><td><a class="table-link" href="https://linkedin.com/in/bkinoshita" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://twitter.com/bukinoshita" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://resend.com" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>James Hawkins</td><td>Founder</td><td>PostHog</td><td>Winter 2020</td><td>150</td><td><a class="table-link" href="https://www.linkedin.com/in/j-hawkins/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://x.com/james406" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://www.posthog.com" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Tim Glaser</td><td>Founder</td><td>PostHog</td><td>Winter 2020</td><td>150</td><td><a class="table-link" href="https://www.linkedin.com/in/timgl/" target="_blank" rel="noopener">Open &nearr;</a></td><td></td><td><a class="table-link" href="https://www.posthog.com" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Han Wang</td><td>Founder/CEO</td><td>Mintlify</td><td>Winter 2022</td><td>75</td><td><a class="table-link" href="https://www.linkedin.com/in/han-y-wang/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://x.com/handotdev" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://mintlify.com" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Hahnbee Lee</td><td>Founder</td><td>Mintlify</td><td>Winter 2022</td><td>75</td><td><a class="table-link" href="https://www.linkedin.com/in/hahnbee-lee/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://twitter.com/hahnbeelee" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://mintlify.com" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Marc Klingen</td><td>Founder/CEO</td><td>Langfuse</td><td>Winter 2023</td><td>26</td><td><a class="table-link" href="https://www.linkedin.com/in/marcklingen/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://twitter.com/marcklingen" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://langfuse.com" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Maximilian Deichmann</td><td>Founder</td><td>Langfuse</td><td>Winter 2023</td><td>26</td><td><a class="table-link" href="https://www.linkedin.com/in/maxdeichmann/" target="_blank" rel="noopener">Open &nearr;</a></td><td></td><td><a class="table-link" href="https://langfuse.com" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Clemens Rawert</td><td>Founder</td><td>Langfuse</td><td>Winter 2023</td><td>26</td><td><a class="table-link" href="https://www.linkedin.com/in/rawert/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://twitter.com/rawert" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://langfuse.com" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Matt Aitken</td><td>Founder</td><td>Trigger.dev</td><td>Winter 2023</td><td>17</td><td><a class="table-link" href="https://www.linkedin.com/in/mattaitken1985/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://twitter.com/mattaitken" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://trigger.dev" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Eric Allam</td><td>Founder</td><td>Trigger.dev</td><td>Winter 2023</td><td>17</td><td><a class="table-link" href="https://www.linkedin.com/in/eric-allam/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://twitter.com/maverickdotdev" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://trigger.dev" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Dan Patel</td><td>Founder</td><td>Trigger.dev</td><td>Winter 2023</td><td>17</td><td><a class="table-link" href="https://www.linkedin.com/in/danielkpatel/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://twitter.com/DKP__" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://trigger.dev" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>James Ritchie</td><td>Founder</td><td>Trigger.dev</td><td>Winter 2023</td><td>17</td><td><a class="table-link" href="https://www.linkedin.com/in/jamesritchiecv/" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://twitter.com/samejr" target="_blank" rel="noopener">Open &nearr;</a></td><td><a class="table-link" href="https://trigger.dev" target="_blank" rel="noopener">Open &nearr;</a></td></tr></tbody></table></div>
     </section>
 
     <section class="section-card" id="ats-sample">
       <div class="section-head">
         <h2>4. Greenhouse, Lever &amp; Ashby Hiring Velocity + Detected Tech Stack Sample (48 Rows)</h2>
         <div class="btn-row">
-          <a class="btn btn-green" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/03_greenhouse_lever_ashby_tech_stack_hiring_signals.csv" download>Download Free 48-Row CSV</a>
+          <a class="btn btn-outline" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/03_greenhouse_lever_ashby_tech_stack_hiring_signals.csv" download>Download Free CSV (48 Rows)</a>
           <a class="btn btn-primary" href="https://apify.com/storeintel/greenhouse-lever-ashby-jobs-scraper" target="_blank" rel="noopener">Run ATS Scraper on Apify &rarr;</a>
         </div>
       </div>
-      <div class="table-wrap"><table><thead><tr><th>Company</th><th>ATS</th><th>Role / Hiring Summary</th><th>Department</th><th>Compensation</th><th>Detected B2B Tech Stack</th><th>Board URL</th></tr></thead><tbody><tr><td>stripe</td><td>greenhouse</td><td>[HIRING SUMMARY] 785 Open Roles (119 Remote)</td><td>All Departments</td><td>See individual roles</td><td>AWS, Airflow, Anthropic, Azure, BigQuery, Databricks, Datadog, Docker, GCP, Go, Gong, GraphQL, HubSpot, Kafka,</td><td><a href="https://boards.greenhouse.io/stripe" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>stripe</td><td>greenhouse</td><td>Abuse Investigator</td><td>8611 Security Analytics</td><td>Not listed</td><td>Databricks, Spark, Stripe, Python</td><td><a href="https://stripe.com/jobs/search?gh_jid=8172508" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>stripe</td><td>greenhouse</td><td>Abuse Investigator</td><td>8611 Security Analytics</td><td>Not listed</td><td>Databricks, Spark, Stripe, Python</td><td><a href="https://stripe.com/jobs/search?gh_jid=8172510" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>stripe</td><td>greenhouse</td><td>Abuse Investigator</td><td>8611 Security Analytics</td><td>Not listed</td><td>Databricks, Spark, Stripe, Python</td><td><a href="https://stripe.com/jobs/search?gh_jid=8172487" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>stripe</td><td>greenhouse</td><td>Account Executive, AI Sales</td><td>1654 Account Executives (AI)</td><td>Not listed</td><td>Stripe, OpenAI, Anthropic</td><td><a href="https://stripe.com/jobs/search?gh_jid=8332467" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>stripe</td><td>greenhouse</td><td>Account Executive, AI Sales</td><td>1654 Account Executives (AI)</td><td>Not listed</td><td>Stripe, OpenAI, Anthropic</td><td><a href="https://stripe.com/jobs/search?gh_jid=8138044" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>anthropic</td><td>greenhouse</td><td>[HIRING SUMMARY] 672 Open Roles (58 Remote)</td><td>All Departments</td><td>See individual roles</td><td>AWS, Airflow, Anthropic, Azure, BigQuery, Databricks, Datadog, Docker, GCP, Go, GraphQL, HubSpot, Kafka, Kuber</td><td><a href="https://boards.greenhouse.io/anthropic" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>anthropic</td><td>greenhouse</td><td>3P Revenue Accounting &amp; Reporting</td><td>Finance</td><td>Not listed</td><td>AWS, GCP, Azure, BigQuery, NetSuite, Workday, Anthropic</td><td><a href="https://job-boards.greenhouse.io/anthropic/jobs/5456619008" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>anthropic</td><td>greenhouse</td><td>Account Executive, AI Native</td><td>Sales</td><td>Not listed</td><td>Anthropic</td><td><a href="https://job-boards.greenhouse.io/anthropic/jobs/4461450008" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>anthropic</td><td>greenhouse</td><td>Account Executive, Nonprofit </td><td>Sales</td><td>Not listed</td><td>Salesforce, Anthropic</td><td><a href="https://job-boards.greenhouse.io/anthropic/jobs/4976314008" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>anthropic</td><td>greenhouse</td><td>Account Executive - Public Sector (ASEAN)</td><td>Sales</td><td>Not listed</td><td>Anthropic</td><td><a href="https://job-boards.greenhouse.io/anthropic/jobs/5391381008" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>anthropic</td><td>greenhouse</td><td>Account Executive, Startups</td><td>Sales</td><td>Not listed</td><td>Anthropic</td><td><a href="https://job-boards.greenhouse.io/anthropic/jobs/5400138008" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>openai</td><td>ashby</td><td>[HIRING SUMMARY] 825 Open Roles (571 Remote)</td><td>All Departments</td><td>See individual roles</td><td>AWS, Airflow, Anthropic, Azure, BigQuery, Databricks, Datadog, Docker, GCP, Go, GraphQL, Kafka, Kubernetes, Ma</td><td><a href="https://jobs.ashbyhq.com/openai" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>openai</td><td>ashby</td><td>Technical Program Manager, Compute Infrastructure</td><td>Technical Program Management</td><td>$207K - $285K</td><td>AWS, GCP, Azure, Kubernetes, OpenAI</td><td><a href="https://jobs.ashbyhq.com/openai/8fb1615c-34bf-47c4-a1d1-b7b2f836bbd3" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>openai</td><td>ashby</td><td>Research Engineer</td><td>Research</td><td>$250K - $445K</td><td>OpenAI</td><td><a href="https://jobs.ashbyhq.com/openai/240d459b-696d-43eb-8497-fab3e56ecd9b" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>openai</td><td>ashby</td><td>Researcher, Safety Training</td><td>Safety Systems</td><td>$380K - $500K</td><td>OpenAI</td><td><a href="https://jobs.ashbyhq.com/openai/2560ed50-5535-42b8-b069-9ebc28ce7493" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>openai</td><td>ashby</td><td>Software Engineer, Scaled Abuse</td><td>Applied AI</td><td>$266K - $445K</td><td>Azure, Kafka, Kubernetes, Terraform, OpenAI, Python, PostgreSQL</td><td><a href="https://jobs.ashbyhq.com/openai/3c67f712-697d-48d8-b05c-01be896e61da" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>openai</td><td>ashby</td><td>Software Engineer, Data Infrastructure</td><td>Scaling</td><td>$266K - $445K</td><td>Airflow, Kafka, Terraform, OpenAI</td><td><a href="https://jobs.ashbyhq.com/openai/f763c6b3-5167-4a67-b691-4c3fa2c44156" target="_blank" rel="noopener">Link &nearr;</a></td></tr></tbody></table></div>
+      <div class="table-wrap"><table><thead><tr><th>Company</th><th>ATS</th><th>Role / Hiring Summary</th><th>Department</th><th>Compensation</th><th>Detected B2B Tech Stack</th><th>Board URL</th></tr></thead><tbody><tr><td>stripe</td><td>greenhouse</td><td>[HIRING SUMMARY] 785 Open Roles (119 Remote)</td><td>All Departments</td><td>See individual roles</td><td>AWS, Airflow, Anthropic, Azure, BigQuery, Databricks, Datadog, Docker, GCP, Go, Gong,</td><td><a class="table-link" href="https://boards.greenhouse.io/stripe" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>stripe</td><td>greenhouse</td><td>Abuse Investigator</td><td>8611 Security Analytics</td><td>Not listed</td><td>Databricks, Spark, Stripe, Python</td><td><a class="table-link" href="https://stripe.com/jobs/search?gh_jid=8172508" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>stripe</td><td>greenhouse</td><td>Abuse Investigator</td><td>8611 Security Analytics</td><td>Not listed</td><td>Databricks, Spark, Stripe, Python</td><td><a class="table-link" href="https://stripe.com/jobs/search?gh_jid=8172510" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>stripe</td><td>greenhouse</td><td>Abuse Investigator</td><td>8611 Security Analytics</td><td>Not listed</td><td>Databricks, Spark, Stripe, Python</td><td><a class="table-link" href="https://stripe.com/jobs/search?gh_jid=8172487" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>stripe</td><td>greenhouse</td><td>Account Executive, AI Sales</td><td>1654 Account Executives (AI)</td><td>Not listed</td><td>Stripe, OpenAI, Anthropic</td><td><a class="table-link" href="https://stripe.com/jobs/search?gh_jid=8332467" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>stripe</td><td>greenhouse</td><td>Account Executive, AI Sales</td><td>1654 Account Executives (AI)</td><td>Not listed</td><td>Stripe, OpenAI, Anthropic</td><td><a class="table-link" href="https://stripe.com/jobs/search?gh_jid=8138044" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>anthropic</td><td>greenhouse</td><td>[HIRING SUMMARY] 672 Open Roles (58 Remote)</td><td>All Departments</td><td>See individual roles</td><td>AWS, Airflow, Anthropic, Azure, BigQuery, Databricks, Datadog, Docker, GCP, Go, Graph</td><td><a class="table-link" href="https://boards.greenhouse.io/anthropic" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>anthropic</td><td>greenhouse</td><td>3P Revenue Accounting &amp; Reporting</td><td>Finance</td><td>Not listed</td><td>AWS, GCP, Azure, BigQuery, NetSuite, Workday, Anthropic</td><td><a class="table-link" href="https://job-boards.greenhouse.io/anthropic/jobs/5456619008" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>anthropic</td><td>greenhouse</td><td>Account Executive, AI Native</td><td>Sales</td><td>Not listed</td><td>Anthropic</td><td><a class="table-link" href="https://job-boards.greenhouse.io/anthropic/jobs/4461450008" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>anthropic</td><td>greenhouse</td><td>Account Executive, Nonprofit </td><td>Sales</td><td>Not listed</td><td>Salesforce, Anthropic</td><td><a class="table-link" href="https://job-boards.greenhouse.io/anthropic/jobs/4976314008" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>anthropic</td><td>greenhouse</td><td>Account Executive - Public Sector (ASEAN)</td><td>Sales</td><td>Not listed</td><td>Anthropic</td><td><a class="table-link" href="https://job-boards.greenhouse.io/anthropic/jobs/5391381008" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>anthropic</td><td>greenhouse</td><td>Account Executive, Startups</td><td>Sales</td><td>Not listed</td><td>Anthropic</td><td><a class="table-link" href="https://job-boards.greenhouse.io/anthropic/jobs/5400138008" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>openai</td><td>ashby</td><td>[HIRING SUMMARY] 825 Open Roles (571 Remote)</td><td>All Departments</td><td>See individual roles</td><td>AWS, Airflow, Anthropic, Azure, BigQuery, Databricks, Datadog, Docker, GCP, Go, Graph</td><td><a class="table-link" href="https://jobs.ashbyhq.com/openai" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>openai</td><td>ashby</td><td>Technical Program Manager, Compute Infrastructure</td><td>Technical Program Management</td><td>$207K - $285K</td><td>AWS, GCP, Azure, Kubernetes, OpenAI</td><td><a class="table-link" href="https://jobs.ashbyhq.com/openai/8fb1615c-34bf-47c4-a1d1-b7b2f836bbd3" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>openai</td><td>ashby</td><td>Research Engineer</td><td>Research</td><td>$250K - $445K</td><td>OpenAI</td><td><a class="table-link" href="https://jobs.ashbyhq.com/openai/240d459b-696d-43eb-8497-fab3e56ecd9b" target="_blank" rel="noopener">Open &nearr;</a></td></tr></tbody></table></div>
     </section>
 
     <section class="section-card" id="churn-sample">
       <div class="section-head">
         <h2>5. Competitor 1-Star Churn Leads (Shopify Apps &amp; WordPress Plugins) Sample (48 Rows)</h2>
         <div class="btn-row">
-          <a class="btn btn-green" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/04_shopify_wordpress_1star_churn_leads.csv" download>Download Free 48-Row CSV</a>
+          <a class="btn btn-outline" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/04_shopify_wordpress_1star_churn_leads.csv" download>Download Free CSV (48 Rows)</a>
           <a class="btn btn-primary" href="https://apify.com/storeintel/shopify-app-1-star-churn-leads-scraper" target="_blank" rel="noopener">Run Churn Scraper on Apify &rarr;</a>
         </div>
       </div>
-      <div class="table-wrap"><table><thead><tr><th>Marketplace</th><th>App / Plugin</th><th>Rating</th><th>Merchant / User</th><th>Location</th><th>Usage Duration</th><th>1-Star Complaint Excerpt</th><th>Source</th></tr></thead><tbody><tr><td>Shopify App Store</td><td>klaviyo-email-marketing</td><td>1</td><td>toycargeek</td><td>United States</td><td>About 16 hours using the app</td><td>Don&#x27;t install their app unless you want to be harassed by them for the rest of your life!!! It is impossible t</td><td><a href="https://apps.shopify.com/reviews/2415136" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>klaviyo-email-marketing</td><td>1</td><td>Fancy Steel</td><td>Australia</td><td>Over 5 years using the app</td><td>Billing is a trap be very careful with “Active Profiles” I’ve used Klaviyo for some time, but their billing sy</td><td><a href="https://apps.shopify.com/reviews/2400594" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>klaviyo-email-marketing</td><td>1</td><td>OVERRATED</td><td>United States</td><td>Over 2 years using the app</td><td>Crazy expensive app If you are mid or small size business try something else before you fell like us!</td><td><a href="https://apps.shopify.com/reviews/2400200" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>klaviyo-email-marketing</td><td>1</td><td>Ludus</td><td>Iceland</td><td>Almost 6 years using the app</td><td>I have been using Klaviyo for a few years now, and using their Review app as well. About 3 months ago we found</td><td><a href="https://apps.shopify.com/reviews/2396901" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>klaviyo-email-marketing</td><td>1</td><td>The Little Rainbow Company Limited</td><td>New Zealand</td><td>Almost 3 years using the app</td><td>It’s okay but when trying to cancel it makes it extremely hard. I deinstalled the app wanting to stop it, and </td><td><a href="https://apps.shopify.com/reviews/2380223" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>klaviyo-email-marketing</td><td>1</td><td>BELGASON CLOTHING</td><td>Canada</td><td>3 months using the app</td><td></td><td><a href="https://apps.shopify.com/reviews/2379658" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>klaviyo-email-marketing</td><td>1</td><td>Dr Gus Nutrition</td><td>United Kingdom</td><td>About 6 years using the app</td><td>removed klaviyo because too expensive. Removing it has damaged my code and now shopify team are having to work</td><td><a href="https://apps.shopify.com/reviews/2363538" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>klaviyo-email-marketing</td><td>1</td><td>Knead More Fun</td><td>Canada</td><td>8 months using the app</td><td>This is not a user friendly app... maybe all email apps are the same. However, the AI &#x27;help&#x27; used by Klaviyo r</td><td><a href="https://apps.shopify.com/reviews/2343263" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>judgeme</td><td>1</td><td>The Silver Bear Company</td><td>United Kingdom</td><td>About 1 year using the app</td><td>Really complicated and you need to be a computer tech engineer to figure it out! Spent hours going around in c</td><td><a href="https://apps.shopify.com/reviews/2420949" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>judgeme</td><td>1</td><td>Homestead Traditions</td><td>United States</td><td>About 1 month using the app</td><td>Very frustrating experience with this app and their support team, which is ironic for an app that collects rev</td><td><a href="https://apps.shopify.com/reviews/2417050" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>judgeme</td><td>1</td><td>Wildaro</td><td>United States</td><td>8 months using the app</td><td>if I could put 0 stars, I would do it, I dont know how this app has 5 stars, I swear I tried many review apps </td><td><a href="https://apps.shopify.com/reviews/2368666" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>judgeme</td><td>1</td><td>Coolkids-Store</td><td>Germany</td><td>3 months using the app</td><td>Wir nutzen Judge.me seit einiger Zeit. Leider wurden offenbar zahlreiche Bewertungsanfragen unterdrückt bezieh</td><td><a href="https://apps.shopify.com/reviews/2364324" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>judgeme</td><td>1</td><td>ABA Visualized</td><td>United States</td><td>Almost 4 years using the app</td><td>Hard to cancel, very expensive</td><td><a href="https://apps.shopify.com/reviews/2360211" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>judgeme</td><td>1</td><td>VeroBride</td><td>Poland</td><td>Over 1 year using the app</td><td>Unfortunately, this developer allows buyers and spammers to post and mention any marketplace directly in revie</td><td><a href="https://apps.shopify.com/reviews/2352559" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>judgeme</td><td>1</td><td>CuraCator™</td><td>United States</td><td>Over 3 years using the app</td><td>This app is horrible. IDK why it has 5.0 stars for 45K reviews. I guess they&#x27;re good at getting their own revi</td><td><a href="https://apps.shopify.com/reviews/2348825" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>judgeme</td><td>1</td><td>LADURRIE</td><td>Brazil</td><td>13 days using the app</td><td>Péssimo, complicam as coisas. A loja não consegue editar algo simples, tem que abrir chamado. É complicado par</td><td><a href="https://apps.shopify.com/reviews/2334184" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>loox</td><td>1</td><td>Lunavere</td><td>United States</td><td>About 2 years using the app</td><td>They will repeatedly over charge you with sneaky changes to their policy and plan names with out notifying you</td><td><a href="https://apps.shopify.com/reviews/2398974" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>loox</td><td>1</td><td>Browm</td><td>France</td><td>8 months using the app</td><td>deviens trop chère , je vais m&#x27;en séparer</td><td><a href="https://apps.shopify.com/reviews/2398431" target="_blank" rel="noopener">Link &nearr;</a></td></tr></tbody></table></div>
+      <div class="table-wrap"><table><thead><tr><th>Marketplace</th><th>App / Plugin</th><th>Rating</th><th>Merchant / User</th><th>Location</th><th>Usage Duration</th><th>1-Star Complaint Excerpt</th><th>Source</th></tr></thead><tbody><tr><td>Shopify App Store</td><td>klaviyo-email-marketing</td><td>1</td><td>toycargeek</td><td>United States</td><td>About 16 hours using the app</td><td>Don&#x27;t install their app unless you want to be harassed by them for the rest of your l</td><td><a class="table-link" href="https://apps.shopify.com/reviews/2415136" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>klaviyo-email-marketing</td><td>1</td><td>Fancy Steel</td><td>Australia</td><td>Over 5 years using the app</td><td>Billing is a trap be very careful with “Active Profiles” I’ve used Klaviyo for some t</td><td><a class="table-link" href="https://apps.shopify.com/reviews/2400594" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>klaviyo-email-marketing</td><td>1</td><td>OVERRATED</td><td>United States</td><td>Over 2 years using the app</td><td>Crazy expensive app If you are mid or small size business try something else before y</td><td><a class="table-link" href="https://apps.shopify.com/reviews/2400200" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>klaviyo-email-marketing</td><td>1</td><td>Ludus</td><td>Iceland</td><td>Almost 6 years using the app</td><td>I have been using Klaviyo for a few years now, and using their Review app as well. Ab</td><td><a class="table-link" href="https://apps.shopify.com/reviews/2396901" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>klaviyo-email-marketing</td><td>1</td><td>The Little Rainbow Company Limited</td><td>New Zealand</td><td>Almost 3 years using the app</td><td>It’s okay but when trying to cancel it makes it extremely hard. I deinstalled the app</td><td><a class="table-link" href="https://apps.shopify.com/reviews/2380223" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>klaviyo-email-marketing</td><td>1</td><td>BELGASON CLOTHING</td><td>Canada</td><td>3 months using the app</td><td></td><td><a class="table-link" href="https://apps.shopify.com/reviews/2379658" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>klaviyo-email-marketing</td><td>1</td><td>Dr Gus Nutrition</td><td>United Kingdom</td><td>About 6 years using the app</td><td>removed klaviyo because too expensive. Removing it has damaged my code and now shopif</td><td><a class="table-link" href="https://apps.shopify.com/reviews/2363538" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>klaviyo-email-marketing</td><td>1</td><td>Knead More Fun</td><td>Canada</td><td>8 months using the app</td><td>This is not a user friendly app... maybe all email apps are the same. However, the AI</td><td><a class="table-link" href="https://apps.shopify.com/reviews/2343263" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>judgeme</td><td>1</td><td>The Silver Bear Company</td><td>United Kingdom</td><td>About 1 year using the app</td><td>Really complicated and you need to be a computer tech engineer to figure it out! Spen</td><td><a class="table-link" href="https://apps.shopify.com/reviews/2420949" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>judgeme</td><td>1</td><td>Homestead Traditions</td><td>United States</td><td>About 1 month using the app</td><td>Very frustrating experience with this app and their support team, which is ironic for</td><td><a class="table-link" href="https://apps.shopify.com/reviews/2417050" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>judgeme</td><td>1</td><td>Wildaro</td><td>United States</td><td>8 months using the app</td><td>if I could put 0 stars, I would do it, I dont know how this app has 5 stars, I swear </td><td><a class="table-link" href="https://apps.shopify.com/reviews/2368666" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>judgeme</td><td>1</td><td>Coolkids-Store</td><td>Germany</td><td>3 months using the app</td><td>Wir nutzen Judge.me seit einiger Zeit. Leider wurden offenbar zahlreiche Bewertungsan</td><td><a class="table-link" href="https://apps.shopify.com/reviews/2364324" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>judgeme</td><td>1</td><td>ABA Visualized</td><td>United States</td><td>Almost 4 years using the app</td><td>Hard to cancel, very expensive</td><td><a class="table-link" href="https://apps.shopify.com/reviews/2360211" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>judgeme</td><td>1</td><td>VeroBride</td><td>Poland</td><td>Over 1 year using the app</td><td>Unfortunately, this developer allows buyers and spammers to post and mention any mark</td><td><a class="table-link" href="https://apps.shopify.com/reviews/2352559" target="_blank" rel="noopener">Open &nearr;</a></td></tr><tr><td>Shopify App Store</td><td>judgeme</td><td>1</td><td>CuraCator™</td><td>United States</td><td>Over 3 years using the app</td><td>This app is horrible. IDK why it has 5.0 stars for 45K reviews. I guess they&#x27;re good </td><td><a class="table-link" href="https://apps.shopify.com/reviews/2348825" target="_blank" rel="noopener">Open &nearr;</a></td></tr></tbody></table></div>
     </section>
   </main>
+
+  <!-- In-Page Order Modal (No OS Mailto Popup!) -->
+  <div class="modal-backdrop" id="orderModal">
+    <div class="modal-box">
+      <div class="modal-head">
+        <div>
+          <h3 class="modal-title" id="modalTitle">Request B2B Data Package</h3>
+          <div style="font-size:0.82rem;color:var(--muted);margin-top:2px;">Instant delivery link &amp; invoice sent straight to your inbox.</div>
+        </div>
+        <button type="button" class="modal-close" onclick="closeOrderModal()">&times;</button>
+      </div>
+      <form id="orderForm" onsubmit="submitOrderForm(event)">
+        <div class="form-field">
+          <label>Selected Package</label>
+          <input type="text" id="orderPackage" name="package" readonly style="background:#f8fafc;font-weight:600;" />
+        </div>
+        <div class="form-field">
+          <label>Your Work Email *</label>
+          <input type="email" id="orderEmail" name="email" required placeholder="you@company.com" />
+        </div>
+        <div class="form-field">
+          <label>Target ICP / Notes (Optional)</label>
+          <textarea id="orderNotes" name="notes" rows="3" placeholder="e.g. Shopify stores using Klaviyo, SaaS founders >$10k MRR, or specific niches..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="orderSubmitBtn" style="width:100%;padding:11px;">Send Request &amp; Get Download Link &rarr;</button>
+        <div class="modal-status" id="orderStatus">
+          ✓ Request received! We've sent your invoice and download instructions to your email. For instant self-serve scraping right now, you can also <a href="https://apify.com/storeintel" target="_blank" style="color:var(--emerald);text-decoration:underline;">run our live Actors on Apify Store</a>.
+        </div>
+      </form>
+    </div>
+  </div>
 
   <footer>
     Powered by <a href="https://apify.com/storeintel" target="_blank" rel="noopener">StoreIntel Labs</a> &middot;
     <a href="index.html">All 32 B2B Scrapers</a> &middot;
-    <a href="https://community.n8n.io/t/i-open-sourced-8-ready-to-import-n8n-workflows-for-b2b-lead-scraping-shopify-stores-skool-mrr-yc-founders-ats-tech-stacks-1-star-saas-churn/328374" target="_blank" rel="noopener">n8n Community Thread</a> &middot;
-    <a href="https://dev.to/storeintel/open-sourced-8-browserless-b2b-lead-e-commerce-scrapers-for-clay-n8n-make-4-free-csv-3l3j" target="_blank" rel="noopener">DEV.to Article</a>
+    <a href="https://community.n8n.io/t/i-open-sourced-8-ready-to-import-n8n-workflows-for-b2b-lead-scraping-shopify-stores-skool-mrr-yc-founders-ats-tech-stacks-1-star-saas-churn/328374" target="_blank" rel="noopener">n8n Community</a> &middot;
+    <a href="https://dev.to/storeintel/open-sourced-8-browserless-b2b-lead-e-commerce-scrapers-for-clay-n8n-make-4-free-csv-3l3j" target="_blank" rel="noopener">DEV.to (#1)</a> &middot;
+    <a href="https://dev.to/storeintel/we-analyzed-60-stripe-verified-saas-startups-on-trustmrr-tech-stacks-mrr-vs-one-time-sales--54h7" target="_blank" rel="noopener">DEV.to (#2)</a>
   </footer>
+
+  <script>
+    function openOrderModal(pkgName) {
+      document.getElementById("orderPackage").value = pkgName;
+      document.getElementById("orderStatus").style.display = "none";
+      document.getElementById("orderSubmitBtn").style.display = "inline-flex";
+      document.getElementById("orderModal").classList.add("open");
+    }
+    function closeOrderModal() {
+      document.getElementById("orderModal").classList.remove("open");
+    }
+    async function submitOrderForm(e) {
+      e.preventDefault();
+      const btn = document.getElementById("orderSubmitBtn");
+      btn.disabled = true;
+      btn.textContent = "Submitting...";
+      const payload = {
+        _subject: "[StoreIntel Order] " + document.getElementById("orderPackage").value,
+        package: document.getElementById("orderPackage").value,
+        email: document.getElementById("orderEmail").value,
+        notes: document.getElementById("orderNotes").value || "Standard bundle"
+      };
+      try {
+        await fetch("https://formsubmit.co/ajax/mikrozar@gmail.com", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(payload)
+        });
+      } catch (_) {}
+      btn.disabled = false;
+      btn.style.display = "none";
+      document.getElementById("orderStatus").style.display = "block";
+    }
+  </script>
 </body>
 </html>
