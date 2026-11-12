@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free B2B Lead Sample Datasets (CSV) — Skool MRR, YC Founders, ATS Tech Stack & SaaS Churn</title>
-  <meta name="description" content="Download free verified B2B lead sample datasets in CSV format: High-MRR Skool Communities & Creator Socials, Y Combinator Founders LinkedIn/X, Greenhouse/Ashby Tech Stack Signals, and 1-Star Shopify/WordPress Churn Leads." />
+  <title>Free B2B Lead Sample Datasets (CSV) — Verified SaaS MRR, Skool MRR, YC Founders, ATS Tech Stack & Churn</title>
+  <meta name="description" content="Download 5 free verified B2B lead sample datasets in CSV format (246 rows): Stripe-Verified SaaS Startups & Founders, High-MRR Skool Communities, Y Combinator Founders LinkedIn/X, Greenhouse/Ashby Tech Stack Signals, and 1-Star Shopify/WordPress Churn Leads." />
   <link rel="canonical" href="https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/samples.html" />
   <style>
     :root {
@@ -13,6 +13,7 @@
       --border: #23304d;
       --accent: #38bdf8;
       --accent-green: #10b981;
+      --accent-amber: #f59e0b;
       --text: #f1f5f9;
       --muted: #94a3b8;
     }
@@ -32,9 +33,41 @@
       border-bottom: 1px solid var(--border);
     }
     h1 { font-size: 2.1rem; margin: 0 0 12px; }
-    .subtitle { color: var(--muted); max-width: 820px; margin: 0 auto 24px; }
+    .subtitle { color: var(--muted); max-width: 860px; margin: 0 auto 24px; }
     .top-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
     .container { max-width: 1200px; margin: 32px auto 80px; padding: 0 24px; display: grid; gap: 36px; }
+    .packs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 18px;
+      margin-top: 14px;
+    }
+    .pack-card {
+      background: #0d1424;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .pack-card.featured {
+      border-color: var(--accent-green);
+      box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.25);
+    }
+    .pack-price {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--accent-green);
+      margin: 6px 0 10px;
+    }
+    .pack-list {
+      margin: 0 0 18px;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .pack-list li { margin-bottom: 6px; }
     .section-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -58,9 +91,11 @@
       font-weight: 600;
       font-size: 0.88rem;
       text-decoration: none;
+      text-align: center;
     }
     .btn-primary { background: var(--accent); color: #090d16; }
     .btn-green { background: var(--accent-green); color: #090d16; }
+    .btn-amber { background: var(--accent-amber); color: #090d16; }
     .btn-secondary { background: #1e293b; color: var(--text); border: 1px solid var(--border); }
     .table-wrap {
       overflow-x: auto;
@@ -87,10 +122,10 @@
 </head>
 <body>
   <header>
-    <h1>Live B2B Lead Sample Datasets (Free CSV Downloads)</h1>
+    <h1>5 Live B2B Lead Sample Datasets (246 Verified Rows — Free CSV)</h1>
     <p class="subtitle">
-      Explore real, unedited sample datasets extracted in seconds by <strong>StoreIntel Labs</strong> browserless Apify Actors.
-      Download the CSVs for free, or run the live scrapers on your own custom keywords &amp; domains.
+      Explore real, unedited B2B lead datasets extracted in seconds by <strong>StoreIntel Labs</strong> browserless HTTP scrapers.
+      Download the sample CSVs for free, run the live Apify Actors yourself, or order full pre-scraped CSV bundles below.
     </p>
     <div class="top-links">
       <a class="btn btn-primary" href="index.html">&larr; Back to All 32 Scrapers Hub</a>
@@ -100,11 +135,69 @@
   </header>
 
   <main class="container">
+    <section class="section-card" id="commercial-packs">
+      <div class="section-head">
+        <h2>⚡ Need More Than a Sample? Choose How You Scale</h2>
+      </div>
+      <div class="packs-grid">
+        <div class="pack-card">
+          <div>
+            <h3 style="margin:0 0 4px;">1. Self-Serve Apify API</h3>
+            <div class="pack-price">$0.90 – $3.00 <span style="font-size:0.85rem;color:var(--muted);font-weight:500;">/ 1,000 leads</span></div>
+            <ul class="pack-list">
+              <li>Run all 8 browserless Actors &amp; 24 Tasks directly on Apify Store</li>
+              <li>Native integration with Clay.com, n8n, and Make.com</li>
+              <li>Zero proxy configuration or browser overhead</li>
+            </ul>
+          </div>
+          <a class="btn btn-primary" href="https://apify.com/storeintel" target="_blank" rel="noopener">Launch on Apify Store &rarr;</a>
+        </div>
+
+        <div class="pack-card featured">
+          <div>
+            <h3 style="margin:0 0 4px;">2. Full Pre-Scraped CSV Bundle</h3>
+            <div class="pack-price">$49 <span style="font-size:0.85rem;color:var(--muted);font-weight:500;">one-time download</span></div>
+            <ul class="pack-list">
+              <li><strong>5,000+</strong> Stripe-Verified SaaS Startups &amp; Founders (MRR + Emails + X)</li>
+              <li><strong>5,000+</strong> High-MRR Skool Communities &amp; Creator Socials</li>
+              <li><strong>4,500+</strong> Y Combinator Founders (Direct LinkedIn &amp; X URLs)</li>
+              <li><strong>10,000+</strong> Shopify D2C Stores + 1-Star Competitor Churn Leads</li>
+            </ul>
+          </div>
+          <a class="btn btn-green" href="mailto:mikrozar@gmail.com?subject=%5BStoreIntel%20Data%20Pack%5D%20Full%2025k%2B%20B2B%20Lead%20CSV%20Bundle%20(%2449)&amp;body=Hi%20StoreIntel%20Labs%2C%0A%0AI'd%20like%20to%20get%20the%20Full%20Pre-Scraped%20B2B%20CSV%20Bundle%20(%2449%20one-time).%20Please%20send%20the%20payment%20link%20and%20download%20access.%0A%0AMy%20target%20niche%20%2F%20company%3A%20">Order Full 25,000+ Lead Bundle ($49) &rarr;</a>
+        </div>
+
+        <div class="pack-card">
+          <div>
+            <h3 style="margin:0 0 4px;">3. Custom Turnkey Lead Extraction</h3>
+            <div class="pack-price">$99 <span style="font-size:0.85rem;color:var(--muted);font-weight:500;">custom B2B delivery</span></div>
+            <ul class="pack-list">
+              <li>Tell us your exact ICP (tech stack, competitor apps, geo, MRR range)</li>
+              <li>We run the full extraction, clean &amp; deduplicate emails/socials</li>
+              <li>Delivered as ready-to-import CSV for Instantly, Smartlead, or Clay within 24h</li>
+            </ul>
+          </div>
+          <a class="btn btn-amber" href="mailto:mikrozar@gmail.com?subject=%5BStoreIntel%20Custom%20Scrape%5D%20Custom%20B2B%20Lead%20Extraction%20(%2499)&amp;body=Hi%20StoreIntel%20Labs%2C%0A%0AI'd%20like%20to%20order%20a%20custom%20B2B%20lead%20dataset%20(%2499).%20Here%20is%20my%20target%20ICP%20%2F%20websites%3A%0A">Request Custom ICP Extraction &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card" id="verified-saas-sample">
+      <div class="section-head">
+        <h2>1. Stripe-Verified SaaS Startups: Exact 30d Revenue, MRR, Founder X &amp; Contact Emails (60 Rows)</h2>
+        <div class="btn-row">
+          <a class="btn btn-green" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/05_stripe_verified_saas_startups_mrr_and_founders.csv" download>Download Free 60-Row CSV</a>
+          <a class="btn btn-primary" href="https://apify.com/storeintel" target="_blank" rel="noopener">Explore StoreIntel Scrapers &rarr;</a>
+        </div>
+      </div>
+      <div class="table-wrap"><table><thead><tr><th>SaaS Startup</th><th>30d Revenue ($)</th><th>Verified MRR ($)</th><th>Founder</th><th>Founder X</th><th>Contact Email</th><th>LinkedIn</th><th>Category</th><th>Website</th></tr></thead><tbody><tr><td>Gumroad</td><td>7143938.0</td><td>0.0</td><td>Sahil Lavingia</td><td><a href="https://x.com/shl" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@gumroad.com</td><td></td><td>E-comm</td><td><a href="https://gumroad.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Pastel</td><td>4001109.0</td><td>0.0</td><td></td><td></td><td>hello@heypastel.com</td><td><a href="https://www.linkedin.com/company/heypastel" target="_blank" rel="noopener">Link &nearr;</a></td><td>Sales, AI, Productivity, Marketing, SaaS</td><td><a href="https://heypastel.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Stan</td><td>2844652.0</td><td>3569654.0</td><td>Vitalii Dodonov</td><td><a href="https://x.com/vitaliidodonov" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@stan.store</td><td></td><td>Content Creation</td><td><a href="https://stan.store/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>easytools</td><td>2703570.0</td><td>0.0</td><td>Greg</td><td><a href="https://x.com/greg_rog" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@easy.tools</td><td><a href="https://www.linkedin.com/in/grzegorzrog" target="_blank" rel="noopener">Link &nearr;</a></td><td>E-comm</td><td><a href="https://easycart.pl/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>ARNTREAL</td><td>1132377.0</td><td>0.0</td><td></td><td></td><td>hello@arntreal.com</td><td></td><td>E-comm</td><td><a href="https://arntreal.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Comp AI</td><td>1001530.0</td><td>17383.0</td><td>Lewis ⚡ soc2/acc</td><td><a href="https://x.com/lewiscarhart" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@trycomp.ai</td><td><a href="https://www.linkedin.com/company/trycompai" target="_blank" rel="noopener">Link &nearr;</a></td><td>AI, SaaS, Security, Dev Tools</td><td><a href="https://trycomp.ai/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Stack Influence</td><td>874961.0</td><td>28342.0</td><td>Laurent Vincent</td><td><a href="https://x.com/laurent_vinc" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@stackinfluence.com</td><td><a href="https://www.linkedin.com/company/stack-influence" target="_blank" rel="noopener">Link &nearr;</a></td><td>Marketing, Social Media, E-comm, Content Creation</td><td><a href="https://stackinfluence.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Brand On Demand, Inc.</td><td>825366.0</td><td>177559.0</td><td>Martins Lasmanis</td><td><a href="https://x.com/martinlasmanis" target="_blank" rel="noopener">Link &nearr;</a></td><td>help@supliful.com</td><td><a href="https://www.linkedin.com/company/supliful" target="_blank" rel="noopener">Link &nearr;</a></td><td>E-comm, SaaS, Content Creation, Marketing, Health &amp; Fitness</td><td><a href="http://supliful.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>MyPlots</td><td>662794.0</td><td>0.02</td><td>Clark</td><td><a href="https://x.com/itsclarkholden" target="_blank" rel="noopener">Link &nearr;</a></td><td>support@myplots.com</td><td></td><td>SaaS, Marketplace, Entertainment, Mobile Apps</td><td><a href="https://myplots.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>1Lookup</td><td>520382.0</td><td>251606.0</td><td>Robby Frank</td><td><a href="https://x.com/robbyfrank" target="_blank" rel="noopener">Link &nearr;</a></td><td>info@1lookup.io</td><td><a href="https://linkedin.com/company/1lookup" target="_blank" rel="noopener">Link &nearr;</a></td><td>SaaS, Dev Tools, Analytics, Security, Sales</td><td><a href="https://www.1lookup.io/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Postiz</td><td>448301.0</td><td>408836.0</td><td>Nevo David</td><td><a href="https://x.com/wickedguro" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@postiz.com</td><td><a href="https://www.linkedin.com/company/postiz" target="_blank" rel="noopener">Link &nearr;</a></td><td>Social Media, AI, Content Creation, SaaS, Marketing</td><td><a href="https://postiz.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>GojiberryAI</td><td>407199.0</td><td>424368.0</td><td>Romàn</td><td><a href="https://x.com/romanbuildsaas" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@gojiberry.ai</td><td></td><td>AI, Sales, Marketing, SaaS, Productivity</td><td><a href="https://gojiberry.ai/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>LLM Gateway</td><td>259539.0</td><td>78764.0</td><td>LLM Gateway</td><td><a href="https://x.com/llmgateway" target="_blank" rel="noopener">Link &nearr;</a></td><td>contact@llmgateway.io</td><td></td><td>AI, Dev Tools, SaaS, Analytics</td><td><a href="https://llmgateway.io/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>HypeProxies</td><td>239377.0</td><td>0.0</td><td>Gunnar</td><td><a href="https://x.com/basedgunnar" target="_blank" rel="noopener">Link &nearr;</a></td><td>support@hypeproxies.io</td><td><a href="https://www.linkedin.com/company/hypeproxies" target="_blank" rel="noopener">Link &nearr;</a></td><td>Security, Dev Tools, SaaS, Utilities</td><td><a href="https://hypeproxies.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Rezi</td><td>209517.0</td><td>238744.0</td><td>Jacob Jacquet</td><td><a href="https://x.com/jacob_jacquet" target="_blank" rel="noopener">Link &nearr;</a></td><td>support@rezi.io</td><td><a href="https://www.linkedin.com/company/reziresume" target="_blank" rel="noopener">Link &nearr;</a></td><td>AI, Productivity, SaaS, Recruiting &amp; HR, Content Creation</td><td><a href="https://www.rezi.ai/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Cometly</td><td>202347.0</td><td>196525.0</td><td>Grant Cooper</td><td><a href="https://x.com/heygrantcooper" target="_blank" rel="noopener">Link &nearr;</a></td><td>support@cometly.com</td><td><a href="https://www.linkedin.com/company/cometly" target="_blank" rel="noopener">Link &nearr;</a></td><td>Analytics, AI, Marketing, SaaS</td><td><a href="https://www.cometly.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>Kibu</td><td>200210.0</td><td>234319.0</td><td>Daniel Caridi</td><td><a href="https://x.com/ddcaridi" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@kibu.com</td><td><a href="https://www.linkedin.com/company/kibuhq" target="_blank" rel="noopener">Link &nearr;</a></td><td>Education, SaaS, Health &amp; Fitness, Productivity, AI</td><td><a href="https://kibu.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr><tr><td>AiSDR INC.</td><td>182761.0</td><td>188795.0</td><td>Yuriy Zaremba</td><td><a href="https://x.com/yz_aisdr" target="_blank" rel="noopener">Link &nearr;</a></td><td>hello@aisdr.com</td><td></td><td>AI, Marketing, SaaS, Sales</td><td><a href="https://aisdr.com/" target="_blank" rel="noopener">Link &nearr;</a></td></tr></tbody></table></div>
+    </section>
+
     <section class="section-card" id="skool-sample">
       <div class="section-head">
-        <h2>1. High-MRR Skool Communities &amp; Creator Social Leads Sample</h2>
+        <h2>2. High-MRR Skool Communities &amp; Creator Social Leads Sample (45 Rows)</h2>
         <div class="btn-row">
-          <a class="btn btn-green" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/01_skool_communities_mrr_and_creator_leads.csv" download>Download Full CSV</a>
+          <a class="btn btn-green" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/01_skool_communities_mrr_and_creator_leads.csv" download>Download Free 45-Row CSV</a>
           <a class="btn btn-primary" href="https://apify.com/storeintel/skool-community-creator-leads-scraper" target="_blank" rel="noopener">Scrape Custom Niches on Apify &rarr;</a>
         </div>
       </div>
@@ -113,9 +206,9 @@
 
     <section class="section-card" id="yc-sample">
       <div class="section-head">
-        <h2>2. Y Combinator Startups &amp; Founders (Direct LinkedIn &amp; X Links) Sample</h2>
+        <h2>3. Y Combinator Startups &amp; Founders (Direct LinkedIn &amp; X Links) Sample (45 Rows)</h2>
         <div class="btn-row">
-          <a class="btn btn-green" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/02_yc_startups_and_founders_linkedin_x_leads.csv" download>Download Full CSV</a>
+          <a class="btn btn-green" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/02_yc_startups_and_founders_linkedin_x_leads.csv" download>Download Free 45-Row CSV</a>
           <a class="btn btn-primary" href="https://apify.com/storeintel/y-combinator-startups-founders-scraper" target="_blank" rel="noopener">Run YC Scraper on Apify &rarr;</a>
         </div>
       </div>
@@ -124,9 +217,9 @@
 
     <section class="section-card" id="ats-sample">
       <div class="section-head">
-        <h2>3. Greenhouse, Lever &amp; Ashby Hiring Velocity + Detected Tech Stack Sample</h2>
+        <h2>4. Greenhouse, Lever &amp; Ashby Hiring Velocity + Detected Tech Stack Sample (48 Rows)</h2>
         <div class="btn-row">
-          <a class="btn btn-green" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/03_greenhouse_lever_ashby_tech_stack_hiring_signals.csv" download>Download Full CSV</a>
+          <a class="btn btn-green" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/03_greenhouse_lever_ashby_tech_stack_hiring_signals.csv" download>Download Free 48-Row CSV</a>
           <a class="btn btn-primary" href="https://apify.com/storeintel/greenhouse-lever-ashby-jobs-scraper" target="_blank" rel="noopener">Run ATS Scraper on Apify &rarr;</a>
         </div>
       </div>
@@ -135,9 +228,9 @@
 
     <section class="section-card" id="churn-sample">
       <div class="section-head">
-        <h2>4. Competitor 1-Star Churn Leads (Shopify Apps &amp; WordPress Plugins) Sample</h2>
+        <h2>5. Competitor 1-Star Churn Leads (Shopify Apps &amp; WordPress Plugins) Sample (48 Rows)</h2>
         <div class="btn-row">
-          <a class="btn btn-green" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/04_shopify_wordpress_1star_churn_leads.csv" download>Download Full CSV</a>
+          <a class="btn btn-green" href="https://raw.githubusercontent.com/mikrozar-cell/b2b-ecommerce-saas-scrapers-n8n-clay/main/datasets/04_shopify_wordpress_1star_churn_leads.csv" download>Download Free 48-Row CSV</a>
           <a class="btn btn-primary" href="https://apify.com/storeintel/shopify-app-1-star-churn-leads-scraper" target="_blank" rel="noopener">Run Churn Scraper on Apify &rarr;</a>
         </div>
       </div>
@@ -147,7 +240,9 @@
 
   <footer>
     Powered by <a href="https://apify.com/storeintel" target="_blank" rel="noopener">StoreIntel Labs</a> &middot;
-    <a href="index.html">All 32 B2B Scrapers</a>
+    <a href="index.html">All 32 B2B Scrapers</a> &middot;
+    <a href="https://community.n8n.io/t/i-open-sourced-8-ready-to-import-n8n-workflows-for-b2b-lead-scraping-shopify-stores-skool-mrr-yc-founders-ats-tech-stacks-1-star-saas-churn/328374" target="_blank" rel="noopener">n8n Community Thread</a> &middot;
+    <a href="https://dev.to/storeintel/open-sourced-8-browserless-b2b-lead-e-commerce-scrapers-for-clay-n8n-make-4-free-csv-3l3j" target="_blank" rel="noopener">DEV.to Article</a>
   </footer>
 </body>
 </html>
