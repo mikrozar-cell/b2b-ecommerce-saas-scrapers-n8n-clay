@@ -2,6 +2,9 @@
 
 Official open-source automation templates, **n8n workflows**, **Make.com blueprints**, and **Clay.com enrichment recipes** powered by [**StoreIntel Labs (`storeintel`)**](https://apify.com/storeintel) on the Apify Store.
 
+- **1-Click Shared Clay.com Workbook Template:** [https://app.clay.com/shared-workbook/share_0toe8fdqHgFAJtmU6wQ](https://app.clay.com/shared-workbook/share_0toe8fdqHgFAJtmU6wQ)
+- **Interactive Web Hub:** [https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/](https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/)
+
 All 8 Actors and 24 specialized Task configurations run over **ultra-fast asynchronous HTTP / JSON / RPC** with **zero headless browser overhead** (`$0.01–$0.03 per 1,000 items` compute cost).
 
 ---

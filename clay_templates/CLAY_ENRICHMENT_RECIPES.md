@@ -1,6 +1,8 @@
 # Clay.com B2B Enrichment Recipes (StoreIntel Labs Apify Actors)
 
-Use these 8 copy-paste recipes inside **Clay.com** (`Add Enrichment` -> `Apify: Run Actor` or `HTTP API`) to enrich thousands of domains, SaaS apps, job boards, Skool communities, Y Combinator startups, and Substack newsletters at `$0.0009–$0.0030` per record.
+- **1-Click Live Clay.com Shared Workbook Template:** https://app.clay.com/shared-workbook/share_0toe8fdqHgFAJtmU6wQ
+
+Use the shared workbook template above or these 8 copy-paste recipes inside **Clay.com** (`Add Enrichment` -> `Apify: Run Actor` or `HTTP API`) to enrich thousands of domains, SaaS apps, job boards, Skool communities, Y Combinator startups, and Substack newsletters at `$0.0009–$0.0030` per record.
 
 ---
 
