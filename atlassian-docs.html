@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ApexCloud Enterprise Labs — Official Atlassian Forge Apps Documentation & Demo Videos</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.6;
+    }
+    .topbar {
+      background: #0f172a;
+      color: #fff;
+      padding: 16px 24px;
+      border-bottom: 1px solid #1e293b;
+    }
+    .topbar-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand { font-size: 18px; font-weight: 700; color: #fff; text-decoration: none; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 16px; }
+    .nav-links a { color: #cbd5e1; text-decoration: none; font-size: 14px; font-weight: 600; }
+    .nav-links a:hover { color: #fff; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 36px 20px 80px; }
+    .hero {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .b-green { background: #dcfce7; color: #166534; }
+    .b-blue { background: #dbeafe; color: #1e40af; }
+    .b-slate { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
+    h1 { margin: 0 0 10px; font-size: 30px; color: #0f172a; }
+    .lead { margin: 0; color: #475569; font-size: 16px; max-width: 880px; }
+    .app-section {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    }
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #f1f5f9;
+      flex-wrap: wrap;
+    }
+    .app-icon { width: 64px; height: 64px; border-radius: 14px; border: 1px solid #e2e8f0; }
+    .app-title h2 { margin: 0 0 4px; font-size: 24px; color: #0f172a; }
+    .app-title p { margin: 0; color: #475569; font-size: 14.5px; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .info-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .info-card h3 { margin: 0 0 10px; font-size: 16px; color: #0f172a; }
+    .info-card ul, .info-card ol { margin: 0; padding-left: 20px; font-size: 14px; color: #334155; }
+    .info-card li { margin-bottom: 6px; }
+    .video-box {
+      margin: 24px 0;
+      background: #0f172a;
+      border-radius: 14px;
+      padding: 18px;
+      color: #fff;
+    }
+    .video-box-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .video-box-top strong { font-size: 15px; color: #38bdf8; }
+    .btn-dl {
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .btn-dl:hover { background: #1d4ed8; }
+    video {
+      width: 100%;
+      max-height: 540px;
+      border-radius: 10px;
+      background: #000;
+      display: block;
+    }
+    .shots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .shot-card {
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .shot-card img { width: 100%; height: auto; display: block; }
+    .shot-cap { padding: 10px 14px; font-size: 13px; color: #475569; background: #f8fafc; border-top: 1px solid #e2e8f0; font-weight: 600; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 10px 12px;
+      text-align: left;
+    }
+    th { background: #f1f5f9; color: #0f172a; font-weight: 700; }
+    code {
+      background: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12.5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a href="#top" class="brand">🛡️ ApexCloud Enterprise Labs — Atlassian Forge Documentation Hub</a>
+      <div class="nav-links">
+        <a href="#docflow">1. DocFlow Pro for Confluence</a>
+        <a href="#approveflow">2. ApproveFlow for Confluence</a>
+        <a href="#vaultfields">3. VaultFields for Jira</a>
+        <a href="#security">Privacy, Security & Support SLA</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="top">
+    <div class="hero">
+      <div class="badge-row">
+        <span class="badge b-green">✓ Runs on Atlassian (100% Native Forge)</span>
+        <span class="badge b-blue">✓ Zero External Network Egress</span>
+        <span class="badge b-slate">✓ Brand Guidelines Compliant ("...for Confluence" / "...for Jira")</span>
+      </div>
+      <h1>Official User & Admin Documentation + Demo Videos</h1>
+      <p class="lead">
+        Welcome! This portal provides complete public documentation, installation & user flow instructions, permission scope justifications, and HD walkthrough demo videos for our 3 serverless Atlassian Forge applications.
+      </p>
+    </div>
+
+    <!-- APP 1: DOCFLOW PRO -->
+    <div class="app-section" id="docflow">
+      <div class="app-header">
+        <img src="atlassian/docflow_icon.png" alt="DocFlow Pro Icon" class="app-icon" />
+        <div class="app-title">
+          <h2>1. DocFlow Pro — Markdown & Table Hub for Confluence</h2>
+          <p>Forge App ID: <code>0291aa4f-ac0d-4ecb-a1e3-cd56e528930e</code> &nbsp;|&nbsp; Host Product: <strong>Atlassian Confluence Cloud</strong></p>
+        </div>
+      </div>
+
+      <div class="video-box">
+        <div class="video-box-top">
+          <strong>🎬 Interactive Walkthrough & Reviewer Demo Video (DocFlow Pro for Confluence)</strong>
+          <a class="btn-dl" href="atlassian/docflow_demo.mp4" download>⬇ Download MP4 Video (756 KB)</a>
+        </div>
+        <video controls preload="metadata" poster="atlassian/docflow_screen1.png">
+          <source src="atlassian/docflow_demo.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="grid-2">
+        <div class="info-card">
+          <h3>🚀 How to Access & Core User Flow</h3>
+          <ol>
+            <li>Navigate to any page in <strong>Confluence Cloud</strong>.</li>
+            <li>Click the <strong>More Actions (<code>•••</code>)</strong> menu in the top-right corner of the page and select <strong>DocFlow Pro — Markdown & Table Hub</strong> (<code>confluence:contentAction</code>).</li>
+            <li><strong>Tab 1 (Markdown Importer):</strong> Paste GitHub-Flavored Markdown (GFM) or load a built-in template, choose <em>Append</em>, <em>Prepend</em>, or <em>Replace</em>, and click <strong>Convert & Apply to Page</strong>.</li>
+            <li><strong>Tab 2 (Page & Table Exporter):</strong> Convert the current Confluence page back to clean Markdown (<code>.md</code>) or extract all tables on the page into downloadable <code>.CSV</code> or <code>.JSON</code> files.</li>
+            <li><strong>Tab 3 (Batch Multi-File Creator):</strong> Select multiple <code>.md</code> files to automatically create child pages under the current Confluence page via Confluence REST API v2.</li>
+          </ol>
+        </div>
+        <div class="info-card">
+          <h3>🔒 Declared Forge Scopes & Architecture</h3>
+          <table>
+            <thead>
+              <tr><th>Scope</th><th>Justification</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>read:page:confluence</code></td><td>Reads current Confluence page storage XHTML to export Markdown and extract HTML tables to CSV/JSON.</td></tr>
+              <tr><td><code>write:page:confluence</code></td><td>Updates the current page body when importing Markdown and creates child pages during batch import via Confluence REST API v2.</td></tr>
+              <tr><td><code>storage:app</code></td><td>Stores recent import/export history logs inside encrypted Atlassian Forge Storage.</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top:10px;font-size:13px;color:#166534;font-weight:600;">✓ Zero External Egress: No data ever leaves Atlassian Cloud.</p>
+        </div>
+      </div>
+
+      <div class="shots-grid">
+        <div class="shot-card">
+          <img src="atlassian/docflow_screen1.png" alt="DocFlow Pro Markdown Importer" />
+          <div class="shot-cap">Screenshot 1: Lossless GFM Markdown to Confluence XHTML Importer & Batch Multi-File Creator</div>
+        </div>
+        <div class="shot-card">
+          <img src="atlassian/docflow_screen2.png" alt="DocFlow Pro CSV Table Exporter" />
+          <div class="shot-cap">Screenshot 2: 1-Click Confluence Page to Markdown (.md) & Embedded Table CSV/JSON Extractor</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- APP 2: APPROVEFLOW -->
+    <div class="app-section" id="approveflow">
+      <div class="app-header">
+        <img src="atlassian/approveflow_icon.png" alt="ApproveFlow Icon" class="app-icon" />
+        <div class="app-title">
+          <h2>2. ApproveFlow — Page Approval & Compliance for Confluence</h2>
+          <p>Forge App ID: <code>b7c40a69-4bd4-49d0-9646-f8e11bcd0d2b</code> &nbsp;|&nbsp; Host Product: <strong>Atlassian Confluence Cloud</strong></p>
+        </div>
+      </div>
+
+      <div class="video-box">
+        <div class="video-box-top">
+          <strong>🎬 Interactive Walkthrough & Reviewer Demo Video (ApproveFlow for Confluence)</strong>
+          <a class="btn-dl" href="atlassian/approveflow_demo.mp4" download>⬇ Download MP4 Video (755 KB)</a>
+        </div>
+        <video controls preload="metadata" poster="atlassian/approveflow_screen1.png">
+          <source src="atlassian/approveflow_demo.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="grid-2">
+        <div class="info-card">
+          <h3>🚀 How to Access & Core User Flow</h3>
+          <ol>
+            <li>Open any page in <strong>Confluence Cloud</strong>.</li>
+            <li>Click the <strong>Page Approval Status</strong> byline item located directly below the page title (<code>confluence:contentBylineItem</code>).</li>
+            <li><strong>Review & Sign-Off:</strong> Click <strong>Approve Current Version</strong> or <strong>Request Changes</strong> (with a mandatory rejection comment). Every sign-off is cryptographically bound to the exact Confluence REST API v2 page version and SHA-256 content digest.</li>
+            <li><strong>Automatic Edit Invalidation:</strong> If any user edits the Confluence page (`version + 1`), ApproveFlow detects the version mismatch and automatically resets the status to <code>OUTDATED</code> until re-approved.</li>
+            <li><strong>Compliance Policy & CSV Audit Export:</strong> Configure required quorum (1–5 reviewers), enforce Separation of Duties (prevent author self-approval), and export the full timestamped audit trail to RFC-4180 CSV.</li>
+          </ol>
+        </div>
+        <div class="info-card">
+          <h3>🔒 Declared Forge Scopes & Architecture</h3>
+          <table>
+            <thead>
+              <tr><th>Scope</th><th>Justification</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>read:page:confluence</code></td><td>Reads the current page version number, author Account ID, and body content via Confluence REST API v2 to compute the SHA-256 integrity digest.</td></tr>
+              <tr><td><code>write:page:confluence</code></td><td>Updates dynamic content byline status properties so the approval state is visible on the page.</td></tr>
+              <tr><td><code>storage:app</code></td><td>Stores immutable approval sign-offs, quorum policies, and SOC 2 / ISO 27001 audit trail records inside encrypted Forge Storage.</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top:10px;font-size:13px;color:#166534;font-weight:600;">✓ Zero External Egress: 100% hosted on Atlassian Forge.</p>
+        </div>
+      </div>
+
+      <div class="shots-grid">
+        <div class="shot-card">
+          <img src="atlassian/approveflow_screen1.png" alt="ApproveFlow Quorum Sign-off" />
+          <div class="shot-cap">Screenshot 1: Version-Locked Quorum Sign-Off & SHA-256 Content Integrity Verification</div>
+        </div>
+        <div class="shot-card">
+          <img src="atlassian/approveflow_screen2.png" alt="ApproveFlow Audit Trail" />
+          <div class="shot-cap">Screenshot 2: Quorum Policy Settings & 1-Click SOC 2 / ISO 27001 CSV Audit Trail Export</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- APP 3: VAULTFIELDS -->
+    <div class="app-section" id="vaultfields">
+      <div class="app-header">
+        <img src="atlassian/vaultfields_icon.png" alt="VaultFields Icon" class="app-icon" />
+        <div class="app-title">
+          <h2>3. VaultFields & Smart DoD Checklists for Jira</h2>
+          <p>Forge App ID: <code>f9f578f7-7cad-4fbb-8b73-05581241adfa</code> &nbsp;|&nbsp; Host Product: <strong>Atlassian Jira Cloud</strong></p>
+        </div>
+      </div>
+
+      <div class="video-box">
+        <div class="video-box-top">
+          <strong>🎬 Interactive Walkthrough & Reviewer Demo Video (VaultFields & Smart DoD Checklists for Jira)</strong>
+          <a class="btn-dl" href="atlassian/vaultfields_demo.mp4" download>⬇ Download MP4 Video (790 KB)</a>
+        </div>
+        <video controls preload="metadata" poster="atlassian/vaultfields_screen1.png">
+          <source src="atlassian/vaultfields_demo.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="grid-2">
+        <div class="info-card">
+          <h3>🚀 How to Access & Core User Flow</h3>
+          <ol>
+            <li>Open any issue in <strong>Jira Cloud</strong> and click the <strong>VaultFields & DoD Checklists</strong> button in the issue action bar (<code>jira:issuePanel</code>).</li>
+            <li><strong>Tab 1 (Role-Restricted Encrypted Vault Fields):</strong> Add sensitive issue data (e.g., ACV contract value, temporary credentials, customer PII) and select allowed roles (<code>Administrators</code>, <code>Security Officers</code>, <code>Developers</code>, or <code>Service Desk Team</code>). Unauthorized users receive server-redacted masks and cannot leak values via JQL/CSV.</li>
+            <li><strong>Tab 2 (Smart Definition-of-Done Checklists):</strong> Apply 1-click enterprise templates (<em>Production Release Gate</em>, <em>Security CVE Triage</em>, <em>Enterprise Onboarding</em>) or add custom mandatory/optional items.</li>
+            <li><strong>Native Jira Workflow Validator Sync:</strong> Every checklist toggle updates <code>issue.properties['vaultfields_dod']</code> (<code>allMandatoryDone: true/false</code>) via Jira REST API v3 to support workflow transition validators.</li>
+          </ol>
+        </div>
+        <div class="info-card">
+          <h3>🔒 Declared Forge Scopes & Architecture</h3>
+          <table>
+            <thead>
+              <tr><th>Scope</th><th>Justification</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>read:jira-work</code></td><td>Reads current Jira issue metadata and project roles to enforce server-side RBAC access checks.</td></tr>
+              <tr><td><code>write:jira-work</code></td><td>Writes checklist completion status to native Jira Issue Property <code>vaultfields_dod</code> for Jira Workflow Validators.</td></tr>
+              <tr><td><code>read:jira-user</code></td><td>Identifies current user's Atlassian Account ID and role membership for RBAC filtering and audit logs.</td></tr>
+              <tr><td><code>storage:app</code></td><td>Stores encrypted VaultFields values, checklist items, and security audit logs inside Forge Storage.</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top:10px;font-size:13px;color:#166534;font-weight:600;">✓ Zero External Egress: 100% hosted on Atlassian Forge.</p>
+        </div>
+      </div>
+
+      <div class="shots-grid">
+        <div class="shot-card">
+          <img src="atlassian/vaultfields_screen1.png" alt="VaultFields RBAC Encrypted Fields" />
+          <div class="shot-cap">Screenshot 1: Server-Side RBAC Encrypted Issue Fields with Role Simulator</div>
+        </div>
+        <div class="shot-card">
+          <img src="atlassian/vaultfields_screen2.png" alt="VaultFields Smart DoD Checklists" />
+          <div class="shot-cap">Screenshot 2: Workflow-Validated Definition-of-Done (DoD) Checklists & Security Audit Log</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRIVACY, SECURITY & SUPPORT -->
+    <div class="app-section" id="security">
+      <h2>🛡️ Privacy Policy, Data Security & Customer Support SLA</h2>
+      <div class="grid-2">
+        <div class="info-card">
+          <h3>Privacy & Zero-Egress Security Policy</h3>
+          <ul>
+            <li><strong>100% Runs on Atlassian (Zero External Egress):</strong> All three applications execute exclusively inside Atlassian's serverless Forge runtime. We do not operate any external servers, third-party databases, or external analytics trackers.</li>
+            <li><strong>Data Storage & Residency:</strong> All app data is stored in Atlassian's encrypted Forge Storage API (<code>@forge/api</code>) and native Jira/Confluence entity properties, inheriting your organization's Atlassian Cloud data residency and encryption-at-rest policies.</li>
+            <li><strong>Personal Data Handling:</strong> The apps only reference standard Atlassian user identifiers (<code>accountId</code> and display name) provided by the Forge runtime to attribute approvals, checklist sign-offs, and audit events.</li>
+          </ul>
+        </div>
+        <div class="info-card" id="support">
+          <h3>Customer Support & Legal Links</h3>
+          <ul>
+            <li><strong>Vendor Name:</strong> ApexCloud Enterprise Labs</li>
+            <li><strong>Support Email:</strong> <code>mikrozar@gmail.com</code></li>
+            <li><strong>Response SLA:</strong> Within 24 business hours (Monday–Friday)</li>
+            <li><strong>Privacy Policy:</strong> <a href="https://github.com/mikrozar-cell/cartlogic-app/blob/main/atlassian-privacy.md" target="_blank">atlassian-privacy.md ↗</a></li>
+            <li><strong>Terms of Service (EULA):</strong> <a href="https://github.com/mikrozar-cell/cartlogic-app/blob/main/atlassian-terms.md" target="_blank">atlassian-terms.md ↗</a></li>
+            <li><strong>Support Portal:</strong> <a href="https://github.com/mikrozar-cell/cartlogic-app/blob/main/atlassian-support.md" target="_blank">atlassian-support.md ↗</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
