@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — StoreIntel Chrome Extensions (Manifest V3)</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.6;
+    }
+    .container { max-width: 860px; margin: 40px auto; padding: 0 20px 60px; }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 32px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    }
+    h1 { margin: 0 0 8px; font-size: 26px; color: #0f172a; }
+    .meta { color: #64748b; font-size: 13.5px; margin-bottom: 24px; }
+    h2 { font-size: 18px; margin-top: 24px; margin-bottom: 8px; color: #0f172a; }
+    p, li { color: #334155; font-size: 14.5px; }
+    ul { padding-left: 20px; }
+    .badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 99px;
+      margin-bottom: 12px;
+    }
+    a { color: #2563eb; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <span class="badge">Privacy-First Chrome Manifest V3</span>
+      <h1>Privacy Policy for StoreIntel Chrome Extensions</h1>
+      <div class="meta">
+        Applies to: <strong>StoreIntel: Shopify Spy &amp; Product CSV Exporter</strong>, <strong>Skool &amp; Creator Intel: MRR Calculator &amp; CSV Exporter</strong>, and <strong>StoreIntel: B2B Lead, Email &amp; Table Extractor to CSV</strong>.<br />
+        Last Updated: November 13, 2026 &nbsp;|&nbsp; Contact: <a href="mailto:mikrozar@gmail.com">mikrozar@gmail.com</a>
+      </div>
+
+      <h2>1. Zero Data Collection &amp; Zero External Tracking</h2>
+      <p>Our Chrome extensions operate locally inside your browser. We do <strong>not</strong> collect, store, sell, rent, or transmit your browsing history, personal information, or extracted webpage data to any external analytics servers or third-party databases.</p>
+
+      <h2>2. Least-Privilege Permissions (Active Tab Only)</h2>
+      <ul>
+        <li><strong><code>activeTab</code> &amp; <code>scripting</code>:</strong> Used strictly when you click the extension icon to inspect the currently open webpage DOM, calculate metrics (such as Shopify pricing stats, Skool community MRR, or HTML table structures), and prepare downloadable CSV/JSON files locally on your device. No background scripts monitor or read your tabs when the popup is closed.</li>
+        <li><strong><code>storage</code> (<code>chrome.storage.local</code>):</strong> Used strictly to save your user-initiated lead basket/saved communities list and optional Pro license activation state locally inside your browser profile.</li>
+      </ul>
+
+      <h2>3. Optional Pro License Key Verification (Gumroad API)</h2>
+      <p>If you choose to purchase and enter an optional Pro license key inside the extension popup, the extension sends only the license key string you typed directly to the official Gumroad License Verification API (<code>https://api.gumroad.com/v2/licenses/verify</code>) to confirm purchase validity. No webpage content or browsing history is included in that request.</p>
+
+      <h2>4. Limited Use Disclosure</h2>
+      <p>The use of information received from Google Chrome APIs adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+
+      <h2>5. Contact &amp; Support</h2>
+      <p>If you have any questions about privacy, data handling, or support, please contact us at <a href="mailto:mikrozar@gmail.com">mikrozar@gmail.com</a> or visit our <a href="https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/index.html">StoreIntel Labs Hub</a>.</p>
+    </div>
+  </div>
+</body>
+</html>
