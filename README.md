@@ -1,6 +1,17 @@
 # Awesome B2B Lead Generation, E-Commerce & SaaS Scrapers (Apify + n8n + Make + Clay)
 
-Official open-source automation templates, **n8n workflows**, **Make.com blueprints**, and **Clay.com enrichment recipes** powered by [**StoreIntel Labs (`storeintel`)**](https://apify.com/storeintel) on the Apify Store.
+Official open-source automation templates, **n8n workflows**, **Make.com blueprints**, **Chrome extensions**, and **Clay.com enrichment recipes** powered by [**StoreIntel Labs (`storeintel`)**](https://apify.com/storeintel) on the Apify Store.
+
+## 🧩 Official Chrome Web Store Extensions (Free Install)
+
+- **StoreIntel: Shopify Spy & Product CSV Exporter:** [https://chromewebstore.google.com/detail/oemdcnkhnpjnpcbalcbfppeblfepnfdi](https://chromewebstore.google.com/detail/oemdcnkhnpjnpcbalcbfppeblfepnfdi)
+- **Skool & Creator Intel: MRR Calculator & CSV Exporter:** [https://chromewebstore.google.com/detail/emcboifchcknlchghjbafmiolpkklemb](https://chromewebstore.google.com/detail/emcboifchcknlchghjbafmiolpkklemb)
+- **Unlock Pro License Key ($19 Lifetime Unlimited Exports):** [https://mikrozaar.gumroad.com/l/sawzow](https://mikrozaar.gumroad.com/l/sawzow)
+- **Chrome Extensions Privacy Policy:** [https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/chrome-privacy.html](https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/chrome-privacy.html)
+
+---
+
+## 🔗 Ecosystem Links
 
 - **1-Click Shared Clay.com Workbook Template:** [https://app.clay.com/shared-workbook/share_0toe8fdqHgFAJtmU6wQ](https://app.clay.com/shared-workbook/share_0toe8fdqHgFAJtmU6wQ)
 - **Live B2B Sample Datasets (Free CSV Explorer):** [https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/samples.html](https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/samples.html)
