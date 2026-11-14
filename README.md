@@ -2,11 +2,13 @@
 
 Official open-source automation templates, **n8n workflows**, **Make.com blueprints**, **Chrome extensions**, and **Clay.com enrichment recipes** powered by [**StoreIntel Labs (`storeintel`)**](https://apify.com/storeintel) on the Apify Store.
 
-## 🧩 Official Chrome Web Store Extensions (Free Install)
+## 🧩 Official Chrome & Microsoft Edge Extensions (Free Install)
 
 - **StoreIntel: Shopify Spy & Product CSV Exporter:** [https://chromewebstore.google.com/detail/oemdcnkhnpjnpcbalcbfppeblfepnfdi](https://chromewebstore.google.com/detail/oemdcnkhnpjnpcbalcbfppeblfepnfdi)
 - **Skool & Creator Intel: MRR Calculator & CSV Exporter:** [https://chromewebstore.google.com/detail/emcboifchcknlchghjbafmiolpkklemb](https://chromewebstore.google.com/detail/emcboifchcknlchghjbafmiolpkklemb)
 - **StoreIntel: Shopify Spy & Product CSV Exporter (Microsoft Edge Add-ons):** [https://microsoftedge.microsoft.com/addons/detail/storeintel-shopify-spy-/kcckfiheoolcijckhbippjnolflapppo](https://microsoftedge.microsoft.com/addons/detail/storeintel-shopify-spy-/kcckfiheoolcijckhbippjnolflapppo)
+- **Skool & Creator Intel: MRR Calculator & CSV Exporter (Microsoft Edge Add-ons):** [https://microsoftedge.microsoft.com/addons/detail/skool-creator-intel-mr/mgklmaghabpglgkmokahioihgnbhhhen](https://microsoftedge.microsoft.com/addons/detail/skool-creator-intel-mr/mgklmaghabpglgkmokahioihgnbhhhen)
+- **StoreIntel: B2B Lead, Email & Table Extractor to CSV (Microsoft Edge Add-ons):** [https://microsoftedge.microsoft.com/addons/detail/storeintel-b2b-lead-ema/eicagciipipjbnailepebbkpgfeedhne](https://microsoftedge.microsoft.com/addons/detail/storeintel-b2b-lead-ema/eicagciipipjbnailepebbkpgfeedhne)
 - **Unlock Pro License Key ($19 Lifetime Unlimited Exports):** [https://mikrozaar.gumroad.com/l/sawzow](https://mikrozaar.gumroad.com/l/sawzow)
 - **Chrome Extensions Privacy Policy:** [https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/chrome-privacy.html](https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/chrome-privacy.html)
 
