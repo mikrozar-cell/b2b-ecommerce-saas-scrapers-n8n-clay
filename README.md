@@ -6,6 +6,7 @@ Official open-source automation templates, **n8n workflows**, **Make.com bluepri
 
 - **StoreIntel: Shopify Spy & Product CSV Exporter:** [https://chromewebstore.google.com/detail/oemdcnkhnpjnpcbalcbfppeblfepnfdi](https://chromewebstore.google.com/detail/oemdcnkhnpjnpcbalcbfppeblfepnfdi)
 - **Skool & Creator Intel: MRR Calculator & CSV Exporter:** [https://chromewebstore.google.com/detail/emcboifchcknlchghjbafmiolpkklemb](https://chromewebstore.google.com/detail/emcboifchcknlchghjbafmiolpkklemb)
+- **StoreIntel: Shopify Spy & Product CSV Exporter (Microsoft Edge Add-ons):** [https://microsoftedge.microsoft.com/addons/detail/storeintel-shopify-spy-/kcckfiheoolcijckhbippjnolflapppo](https://microsoftedge.microsoft.com/addons/detail/storeintel-shopify-spy-/kcckfiheoolcijckhbippjnolflapppo)
 - **Unlock Pro License Key ($19 Lifetime Unlimited Exports):** [https://mikrozaar.gumroad.com/l/sawzow](https://mikrozaar.gumroad.com/l/sawzow)
 - **Chrome Extensions Privacy Policy:** [https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/chrome-privacy.html](https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/chrome-privacy.html)
 
