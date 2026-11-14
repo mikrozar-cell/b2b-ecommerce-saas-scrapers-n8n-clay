@@ -13,6 +13,7 @@ Official open-source automation templates, **n8n workflows**, **Make.com bluepri
 
 ## 🔗 Ecosystem Links
 
+- **Live REST API (`$0` Free / `$19` Pro / `$49` Ultra on RapidAPI Hub):** [https://rapidapi.com/mikrozar-1NoawVerl/api/storeintel-b2b-e-commerce-intelligence](https://rapidapi.com/mikrozar-1NoawVerl/api/storeintel-b2b-e-commerce-intelligence)
 - **1-Click Shared Clay.com Workbook Template:** [https://app.clay.com/shared-workbook/share_0toe8fdqHgFAJtmU6wQ](https://app.clay.com/shared-workbook/share_0toe8fdqHgFAJtmU6wQ)
 - **Live B2B Sample Datasets (Free CSV Explorer):** [https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/samples.html](https://mikrozar-cell.github.io/b2b-ecommerce-saas-scrapers-n8n-clay/samples.html)
 - **Instant Download — Full 6-Database B2B CSV Bundle ($49 on Gumroad):** [https://mikrozaar.gumroad.com/l/kevhup](https://mikrozaar.gumroad.com/l/kevhup)
